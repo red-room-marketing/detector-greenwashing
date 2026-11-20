@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Si usas estos datos o este código, cítalos así."
+title: "Comprobador de reclamos ambientales (Directiva 2024/825)"
+type: software
+authors:
+  - name: "Red Room®"
+    website: "https://redroom.es"
+repository-code: "https://github.com/NachoMeGran/marketingetico"
+url: "https://nachomegran.github.io/marketingetico/"
+license: MIT
+version: 1.0.0
+date-released: 2026-11-20
+keywords:
+  - greenwashing
+  - Directiva 2024/825
+  - reclamos ambientales
+  - marketing ético
+  - sostenibilidad

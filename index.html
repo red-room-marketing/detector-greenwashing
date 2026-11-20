@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprobador de reclamos ambientales · Directiva 2024/825</title>
+<meta name="description" content="Pega el texto de tu web, tu envase o tu anuncio y comprueba si usa afirmaciones ambientales que la Directiva (UE) 2024/825 prohíbe o restringe: «ecológico», «neutro en carbono», «100 % sostenible»… Gratis, en español y sin enviar el texto a ningún servidor.">
+<link rel="canonical" href="https://nachomegran.github.io/marketingetico/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Comprobador de reclamos ambientales (Directiva 2024/825)">
+<meta property="og:description" content="Detecta afirmaciones ambientales de riesgo en español y propone alternativas defendibles. Una herramienta abierta de Red Room®.">
+<meta property="og:url" content="https://nachomegran.github.io/marketingetico/">
+<meta property="og:locale" content="es_ES">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Comprobador de reclamos ambientales (Directiva 2024/825)",
+  "url": "https://nachomegran.github.io/marketingetico/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Cualquiera con navegador web",
+  "inLanguage": "es",
+  "isAccessibleForFree": true,
+  "license": "https://opensource.org/licenses/MIT",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "creator": { "@type": "Organization", "name": "Red Room®", "url": "https://redroom.es/" },
+  "codeRepository": "https://github.com/NachoMeGran/marketingetico"
+}
+</script>
+<style>
+  :root {
+    --tinta: #161616;
+    --crema: #f7f3e8;
+    --blanco: #ffffff;
+    --rojo: #b3121c;
+    --gris: #4a4a4a;
+    --linea: #161616;
+    --alto-fondo: #fbd5d2;
+    --medio-fondo: #fdecb4;
+    --foco: #0b57d0;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--crema);
+    color: var(--tinta);
+    font: 1.0625rem/1.6 Georgia, "Times New Roman", serif;
+  }
+  .titular, h1, h2, h3, .meta, button, .riesgo {
+    font-family: "Arial Narrow", "Roboto Condensed", "Helvetica Neue", Arial, sans-serif;
+  }
+  a { color: var(--tinta); text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
+  a:hover { color: var(--rojo); }
+  :focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; }
+  .envoltura { max-width: 72rem; margin: 0 auto; padding: 0 16px; }
+  header { border-bottom: 2px solid var(--linea); }
+  header .envoltura { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-top: 1rem; padding-bottom: 1rem; }
+  .marca { font-weight: 700; text-transform: uppercase; text-decoration: none; font-family: "Arial Narrow", Arial, sans-serif; }
+  .meta { font-size: 0.875rem; font-weight: 700; text-transform: uppercase; }
+  .portada { padding: clamp(2rem, 6vw, 5rem) 0 2rem; }
+  .portada .meta { color: var(--rojo); margin: 0 0 1rem; }
+  h1 { font-size: clamp(2.25rem, 6vw, 4.5rem); line-height: 1.02; text-transform: uppercase; margin: 0 0 1.25rem; max-width: 16ch; }
+  .entradilla { font-size: clamp(1.125rem, 1.6vw, 1.375rem); max-width: 60ch; margin: 0; }
+  .herramienta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; padding: 2rem 0 3rem; }
+  @media (max-width: 860px) { .herramienta { grid-template-columns: minmax(0, 1fr); } }
+  label { display: block; font-weight: 700; margin-bottom: 0.5rem; font-family: "Arial Narrow", Arial, sans-serif; text-transform: uppercase; }
+  textarea {
+    width: 100%; min-height: 18rem; padding: 1rem; resize: vertical;
+    font: inherit; color: var(--tinta); background: var(--blanco);
+    border: 2px solid var(--linea); border-radius: 0;
+  }
+  .ayuda { font-size: 0.9375rem; color: var(--gris); margin: 0.5rem 0 1rem; }
+  .botones { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  button {
+    font-size: 1rem; font-weight: 700; text-transform: uppercase; cursor: pointer;
+    padding: 0.85rem 1.4rem; border: 2px solid var(--tinta); border-radius: 0;
+    background: var(--tinta); color: var(--crema);
+  }
+  button.secundario { background: transparent; color: var(--tinta); }
+  button:hover { background: var(--rojo); border-color: var(--rojo); color: var(--blanco); }
+  .resumen { font-size: 1.125rem; margin: 0 0 1rem; min-height: 1.6em; }
+  .resumen strong { font-family: "Arial Narrow", Arial, sans-serif; }
+  .texto-marcado {
+    background: var(--blanco); border: 2px solid var(--linea); padding: 1rem;
+    white-space: pre-wrap; overflow-wrap: anywhere; margin-bottom: 1.5rem;
+  }
+  mark { color: var(--tinta); padding: 0 0.1em; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.15em; }
+  mark.alto { background: var(--alto-fondo); text-decoration-color: var(--rojo); }
+  mark.medio { background: var(--medio-fondo); text-decoration-style: dotted; }
+  ol.avisos { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  ol.avisos li { border-top: 2px solid var(--linea); padding-top: 0.75rem; }
+  .riesgo { display: inline-block; font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; padding: 0.15rem 0.5rem; margin-right: 0.5rem; border: 2px solid var(--tinta); }
+  .riesgo.alto { background: var(--alto-fondo); }
+  .riesgo.medio { background: var(--medio-fondo); }
+  h3 { font-size: 1.25rem; text-transform: uppercase; margin: 0.5rem 0; line-height: 1.2; }
+  .avisos p { margin: 0.35rem 0; }
+  .base { font-size: 0.875rem; color: var(--gris); }
+  .vacio { border: 2px dashed var(--linea); padding: 1rem; }
+  section.explica { border-top: 2px solid var(--linea); padding: 3rem 0; }
+  h2 { font-size: clamp(1.5rem, 3vw, 2.5rem); text-transform: uppercase; line-height: 1.05; margin: 0 0 1.25rem; }
+  .columnas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+  @media (max-width: 860px) { .columnas { grid-template-columns: minmax(0, 1fr); } }
+  .columnas h3 { font-size: 1.125rem; }
+  footer { background: var(--tinta); color: var(--crema); padding: 2.5rem 0; font-size: 0.9375rem; }
+  footer a { color: var(--crema); }
+  footer a:hover { color: #ffb4ad; }
+  footer p { margin: 0.4rem 0; max-width: 70ch; }
+</style>
+</head>
+<body>
+<header>
+  <div class="envoltura">
+    <a class="marca" href="https://redroom.es/">Red Room®</a>
+    <a class="meta" href="https://github.com/NachoMeGran/marketingetico">Código en GitHub</a>
+  </div>
+</header>
+
+<main>
+  <div class="envoltura">
+    <section class="portada" aria-labelledby="titulo">
+      <p class="meta">Directiva (UE) 2024/825 · Aplicable desde el 27 de septiembre de 2026</p>
+      <h1 id="titulo">Comprobador de reclamos ambientales</h1>
+      <p class="entradilla">Pega el texto de tu web, tu envase o tu anuncio. Te marcamos las afirmaciones ambientales que la directiva prohíbe o restringe, por qué y cómo reformularlas con datos. El texto no sale de tu navegador.</p>
+    </section>
+
+    <section class="herramienta" aria-label="Comprobador">
+      <div>
+        <label for="texto">Texto que quieres revisar</label>
+        <textarea id="texto" spellcheck="false" aria-describedby="ayuda-texto"></textarea>
+        <p class="ayuda" id="ayuda-texto">Funciona con textos en español. Se revisa mientras escribes.</p>
+        <div class="botones">
+          <button type="button" id="ejemplo" class="secundario">Probar con un ejemplo</button>
+          <button type="button" id="borrar" class="secundario">Borrar</button>
+        </div>
+      </div>
+      <div>
+        <h2 class="meta" id="titulo-resultado">Resultado</h2>
+        <p class="resumen" id="resumen" role="status" aria-live="polite">Escribe o pega un texto para empezar.</p>
+        <div id="marcado" class="texto-marcado" hidden></div>
+        <ol class="avisos" id="avisos" aria-labelledby="titulo-resultado"></ol>
+      </div>
+    </section>
+  </div>
+
+  <section class="explica" aria-labelledby="que-revisa">
+    <div class="envoltura">
+      <h2 id="que-revisa">Qué revisa</h2>
+      <div class="columnas">
+        <div>
+          <h3>Afirmaciones genéricas</h3>
+          <p>«Ecológico», «verde», «sostenible» o «respetuoso con el medio ambiente» sin explicar en qué consiste el beneficio. Solo son lícitas con un comportamiento medioambiental excelente reconocido.</p>
+        </div>
+        <div>
+          <h3>Neutralidad por compensación</h3>
+          <p>«Neutro en carbono» o «positivo para el clima» cuando se basa en comprar créditos de carbono. Las reducciones reales sí pueden comunicarse.</p>
+        </div>
+        <div>
+          <h3>Alcance, futuro y sellos</h3>
+          <p>Beneficios parciales atribuidos a toda la marca, compromisos como «cero emisiones en 2040» sin plan verificable, sellos propios y requisitos legales presentados como ventaja.</p>
+        </div>
+      </div>
+      <p>Para entender la norma con ejemplos y una tabla de alternativas, lee <a href="https://redroom.es/directiva-2024-825-afirmaciones-ambientales/">Directiva 2024/825: las afirmaciones ambientales que ya no puedes usar en tu publicidad</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="envoltura">
+    <p>Herramienta abierta de <a href="https://redroom.es/">Red Room®</a>, agencia de marketing ético. Si necesitas revisar tu web, tus envases o tus campañas, lo hacemos en nuestro servicio de <a href="https://redroom.es/agencia-de-comunicacion-esg-sostenibilidad/">comunicación ESG y sostenibilidad</a>.</p>
+    <p>Lista orientativa basada en la Directiva (UE) 2024/825. Puede dar falsos positivos y no detecta todos los casos. No sustituye al asesoramiento jurídico.</p>
+    <p>Código con licencia MIT y datos con licencia <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a>. <a href="https://github.com/NachoMeGran/marketingetico">Ver el código y los datos en GitHub</a>.</p>
+  </div>
+</footer>
+
+<script src="src/comprobador.js"></script>
+<script>
+(function () {
+  'use strict';
+  var EJEMPLO = 'Somos una marca sostenible y respetuosa con el medio ambiente.\n\nNuestro nuevo envase ecológico es 100 % sostenible y el café es neutro en carbono gracias a la compra de créditos de carbono. Además, seremos cero emisiones netas en 2035.\n\nTodos nuestros aerosoles son sin CFC y llevan nuestro sello verde.';
+  var campo = document.getElementById('texto');
+  var resumenEl = document.getElementById('resumen');
+  var marcadoEl = document.getElementById('marcado');
+  var avisosEl = document.getElementById('avisos');
+  var datos = null;
+  var temporizador = null;
+
+  function el(etiqueta, clase, texto) {
+    var n = document.createElement(etiqueta);
+    if (clase) n.className = clase;
+    if (texto != null) n.textContent = texto;
+    return n;
+  }
+
+  function pintarMarcado(texto, avisos) {
+    // Fusiona los tramos que se solapan para poder marcarlos sin anidar.
+    var tramos = [];
+    avisos.forEach(function (a) {
+      var ultimo = tramos[tramos.length - 1];
+      if (ultimo && a.inicio < ultimo.fin) {
+        ultimo.fin = Math.max(ultimo.fin, a.fin);
+        if (a.riesgo === 'alto') ultimo.riesgo = 'alto';
+      } else {
+        tramos.push({ inicio: a.inicio, fin: a.fin, riesgo: a.riesgo });
+      }
+    });
+    marcadoEl.textContent = '';
+    var pos = 0;
+    tramos.forEach(function (t) {
+      marcadoEl.appendChild(document.createTextNode(texto.slice(pos, t.inicio)));
+      var m = el('mark', t.riesgo, texto.slice(t.inicio, t.fin));
+      marcadoEl.appendChild(m);
+      pos = t.fin;
+    });
+    marcadoEl.appendChild(document.createTextNode(texto.slice(pos)));
+    marcadoEl.hidden = tramos.length === 0;
+  }
+
+  function pintarAvisos(avisos) {
+    avisosEl.textContent = '';
+    avisos.forEach(function (a) {
+      var li = el('li');
+      var cab = el('p');
+      cab.appendChild(el('span', 'riesgo ' + a.riesgo, 'Riesgo ' + a.riesgo));
+      cab.appendChild(el('span', 'meta', a.categoriaNombre));
+      li.appendChild(cab);
+      li.appendChild(el('h3', null, '«' + a.texto + '»'));
+      li.appendChild(el('p', null, a.motivo));
+      var alt = el('p');
+      alt.appendChild(el('strong', null, 'Alternativa: '));
+      alt.appendChild(document.createTextNode(a.alternativa));
+      li.appendChild(alt);
+      li.appendChild(el('p', 'base', a.base));
+      avisosEl.appendChild(li);
+    });
+  }
+
+  function revisar() {
+    if (!datos) return;
+    var texto = campo.value;
+    if (!texto.trim()) {
+      resumenEl.textContent = 'Escribe o pega un texto para empezar.';
+      marcadoEl.hidden = true;
+      avisosEl.textContent = '';
+      return;
+    }
+    var avisos = ComprobadorReclamos.comprobar(texto, datos);
+    var r = ComprobadorReclamos.resumen(avisos);
+    if (r.total === 0) {
+      resumenEl.textContent = 'No hemos encontrado expresiones de riesgo. Revisa igualmente que cada dato pueda demostrarse.';
+    } else {
+      resumenEl.textContent = r.total + (r.total === 1 ? ' aviso: ' : ' avisos: ') + r.alto + ' de riesgo alto y ' + r.medio + ' de riesgo medio.';
+    }
+    pintarMarcado(texto, avisos);
+    pintarAvisos(avisos);
+  }
+
+  campo.addEventListener('input', function () {
+    clearTimeout(temporizador);
+    temporizador = setTimeout(revisar, 250);
+  });
+  document.getElementById('ejemplo').addEventListener('click', function () {
+    campo.value = EJEMPLO;
+    revisar();
+    campo.focus();
+  });
+  document.getElementById('borrar').addEventListener('click', function () {
+    campo.value = '';
+    revisar();
+    campo.focus();
+  });
+
+  fetch('datos/reclamos.json')
+    .then(function (r) { return r.json(); })
+    .then(function (d) { datos = d; revisar(); })
+    .catch(function () { resumenEl.textContent = 'No se han podido cargar los datos. Recarga la página.'; });
+})();
+</script>
+</body>
+</html>

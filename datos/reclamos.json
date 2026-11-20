@@ -1,0 +1,239 @@
+{
+  "nombre": "Reclamos ambientales que conviene revisar según la Directiva (UE) 2024/825",
+  "version": "1.0.0",
+  "fecha": "2026-11-20",
+  "autor": "Red Room® (https://redroom.es)",
+  "licencia": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/deed.es)",
+  "nota": "Los patrones se aplican sobre el texto en minúsculas y sin tildes. Lista orientativa: no sustituye al asesoramiento jurídico.",
+  "categorias": {
+    "generica": {
+      "nombre": "Afirmación ambiental genérica",
+      "base": "Directiva 2005/29/CE, anexo I, punto 4 bis, añadido por la Directiva (UE) 2024/825"
+    },
+    "compensacion": {
+      "nombre": "Neutralidad o impacto basados en la compensación de emisiones",
+      "base": "Directiva 2005/29/CE, anexo I, punto 4 quater, añadido por la Directiva (UE) 2024/825"
+    },
+    "futuro": {
+      "nombre": "Compromiso ambiental de futuro",
+      "base": "Directiva 2005/29/CE, artículo 6, apartado 2, letra d), añadida por la Directiva (UE) 2024/825"
+    },
+    "alcance": {
+      "nombre": "Beneficio parcial atribuido al producto o a la empresa entera",
+      "base": "Directiva 2005/29/CE, anexo I, punto 4 ter, añadido por la Directiva (UE) 2024/825"
+    },
+    "etiqueta": {
+      "nombre": "Sello o etiqueta de sostenibilidad",
+      "base": "Directiva 2005/29/CE, anexo I, punto 2 bis, añadido por la Directiva (UE) 2024/825"
+    },
+    "requisito_legal": {
+      "nombre": "Requisito legal presentado como ventaja",
+      "base": "Directiva 2005/29/CE, anexo I, punto 10 bis, añadido por la Directiva (UE) 2024/825"
+    }
+  },
+  "reclamos": [
+    {
+      "id": "ecologico",
+      "categoria": "generica",
+      "riesgo": "alto",
+      "expresion": "ecológico, ecológica",
+      "patrones": ["ecologic[oa]s?"],
+      "excluir": ["agricultura ecologica", "produccion ecologica", "logotipo ecologico", "etiqueta ecologica de la (ue|union europea)", "ecoetiqueta", "huella ecologica", "transicion ecologica", "ministerio para la transicion"],
+      "motivo": "Afirmación genérica: no dice en qué consiste el beneficio. Solo es lícita si se acredita un comportamiento medioambiental excelente reconocido. Excepción: productos con certificación oficial, como los alimentos con el logotipo ecológico de la UE.",
+      "alternativa": "Concretar el beneficio con un dato verificable: «envase fabricado con un 80 % de plástico reciclado»."
+    },
+    {
+      "id": "verde",
+      "categoria": "generica",
+      "riesgo": "medio",
+      "expresion": "verde",
+      "patrones": ["verdes?"],
+      "excluir": ["color", "tono", "luz verde", "zonas? verdes?", "espacios? verdes?", "te verde", "pimientos?", "aceitunas?", "semaforo", "pacto verde", "cabo verde", "boton verde"],
+      "motivo": "Usado como cualidad ambiental («producto verde», «energía verde»), es una afirmación genérica. Si se refiere al color, ignora el aviso.",
+      "alternativa": "Explicar qué hace distinto al producto: «electricidad 100 % de origen renovable con garantía de origen»."
+    },
+    {
+      "id": "respetuoso_medio_ambiente",
+      "categoria": "generica",
+      "riesgo": "alto",
+      "expresion": "respetuoso con el medio ambiente, con el entorno, con el planeta o con la naturaleza",
+      "patrones": ["respetuos[oa]s? con (el |la )?(medio ?ambiente|entorno|planeta|naturaleza)"],
+      "motivo": "Es uno de los ejemplos de afirmación genérica que cita la propia directiva.",
+      "alternativa": "Sustituirlo por el hecho concreto que lo justifica y acotarlo a la parte del producto a la que se refiere."
+    },
+    {
+      "id": "respetuoso_clima",
+      "categoria": "generica",
+      "riesgo": "alto",
+      "expresion": "respetuoso con el clima, amigo del clima",
+      "patrones": ["(respetuos[oa]s? con|amig[oa]s? del|amigables? con) el clima", "climate[- ]friendly"],
+      "motivo": "Afirmación genérica sobre el clima sin especificar el beneficio.",
+      "alternativa": "Comunicar reducciones reales y medidas de emisiones: «hemos reducido un 30 % las emisiones de nuestra flota desde 2022»."
+    },
+    {
+      "id": "amigo_naturaleza",
+      "categoria": "generica",
+      "riesgo": "alto",
+      "expresion": "amigo de la naturaleza, amigable con el planeta, eco-friendly",
+      "patrones": ["(amig[oa]s? de|amigables? con) (la naturaleza|el planeta|el medio ?ambiente)", "eco[- ]?friendly", "planet[- ]friendly", "environmentally[- ]friendly", "nature[- ]friendly", "eco[- ]?(amigables?|responsables?|conscientes?)"],
+      "motivo": "Afirmación genérica, también en inglés o con el prefijo «eco».",
+      "alternativa": "Sustituirla por el dato concreto que la justifica."
+    },
+    {
+      "id": "ecologicamente_correcto",
+      "categoria": "generica",
+      "riesgo": "alto",
+      "expresion": "ecológicamente correcto, ambientalmente responsable",
+      "patrones": ["(ecologica|ambiental|medioambiental)mente (correct|responsabl|amigabl|sostenibl)[a-z]*"],
+      "motivo": "Afirmación genérica: el consumidor no puede comprobar qué significa.",
+      "alternativa": "Describir la práctica concreta y su resultado medido."
+    },
+    {
+      "id": "sostenible",
+      "categoria": "generica",
+      "riesgo": "medio",
+      "expresion": "sostenible, sustentable",
+      "patrones": ["sostenibles?", "sustentables?", "sustainable"],
+      "excluir": ["desarrollo sostenible", "objetivos de desarrollo", "consumo sostenible", "ley de consumo", "agenda 2030", "informes? de sostenibilidad"],
+      "motivo": "Aplicado a un producto, un servicio o una empresa («envase sostenible», «moda sostenible»), es una afirmación genérica. Hablar de sostenibilidad como tema no lo es.",
+      "alternativa": "«Envase de cartón reciclable, sin plásticos» en lugar de «envase sostenible»."
+    },
+    {
+      "id": "sin_impacto",
+      "categoria": "generica",
+      "riesgo": "alto",
+      "expresion": "inocuo para el medio ambiente, sin impacto ambiental, impacto cero",
+      "patrones": ["inocu[oa]s? para el (medio ?ambiente|planeta)", "no dana (el medio ?ambiente|al medio ?ambiente|el planeta|al planeta)", "sin impacto (ambiental|medioambiental|en el (medio ?ambiente|planeta))", "impacto (ambiental |medioambiental )?cero", "cero impacto"],
+      "motivo": "Ningún producto tiene impacto nulo; es una afirmación genérica y difícil de demostrar.",
+      "alternativa": "Indicar qué impacto se ha reducido, cuánto y con qué método de medida."
+    },
+    {
+      "id": "biodegradable",
+      "categoria": "generica",
+      "riesgo": "medio",
+      "expresion": "biodegradable",
+      "patrones": ["biodegradables?"],
+      "motivo": "Sin especificar en qué condiciones, en cuánto tiempo y según qué norma, puede considerarse genérica o engañosa.",
+      "alternativa": "«Compostable en instalaciones industriales según la norma UNE-EN 13432», si es cierto y está certificado."
+    },
+    {
+      "id": "base_biologica",
+      "categoria": "generica",
+      "riesgo": "medio",
+      "expresion": "de base biológica, bioplástico",
+      "patrones": ["de base biologica", "bioplasticos?", "bio[- ]?based"],
+      "motivo": "Conviene precisar qué porcentaje del material es de origen biológico y qué parte del producto afecta.",
+      "alternativa": "«Botella fabricada con un 30 % de plástico de origen vegetal»."
+    },
+    {
+      "id": "eficiente_energeticamente",
+      "categoria": "generica",
+      "riesgo": "medio",
+      "expresion": "energéticamente eficiente",
+      "patrones": ["energeticamente eficientes?", "eficientes? energeticamente"],
+      "motivo": "Genérica si no se apoya en una clasificación oficial. La etiqueta energética de la UE sí es una referencia válida.",
+      "alternativa": "Citar la clase de la etiqueta energética o el consumo medido."
+    },
+    {
+      "id": "limpio",
+      "categoria": "generica",
+      "riesgo": "medio",
+      "expresion": "energía limpia, tecnología limpia",
+      "patrones": ["(energias?|tecnologias?|combustibles?|movilidad) limpi[oa]s?", "clean energy"],
+      "motivo": "«Limpio» como cualidad ambiental es vago si no se explica el origen o la reducción concreta.",
+      "alternativa": "Indicar el origen de la energía o la reducción de emisiones medida."
+    },
+    {
+      "id": "green",
+      "categoria": "generica",
+      "riesgo": "medio",
+      "expresion": "green (en inglés)",
+      "patrones": ["green"],
+      "excluir": ["greenwashing", "greenhushing", "green deal", "green claims"],
+      "motivo": "El término en inglés tiene el mismo problema que «verde» cuando describe un producto o una marca.",
+      "alternativa": "Sustituirlo por el beneficio concreto."
+    },
+    {
+      "id": "neutro_carbono",
+      "categoria": "compensacion",
+      "riesgo": "alto",
+      "expresion": "neutro en carbono, carbono neutral, cero emisiones, net zero",
+      "patrones": ["neutr[oa]s? en (carbono|co2|emisiones|clima)", "carbono neutral(es)?", "climaticamente neutr[oa]s?", "neutralidad (de carbono|climatica|en carbono)", "carbon[- ]neutral", "climate[- ]neutral", "co2[- ]neutral", "net[- ]zero", "emisiones netas cero", "cero emisiones( netas)?", "huella (de carbono )?cero", "0 emisiones"],
+      "motivo": "Prohibida si se basa en la compensación de emisiones (créditos de carbono). Solo puede afirmarse si se apoya en reducciones reales en toda la cadena de valor y puede demostrarse.",
+      "alternativa": "«Hemos reducido un 30 % las emisiones de nuestra flota desde 2022»."
+    },
+    {
+      "id": "compensacion",
+      "categoria": "compensacion",
+      "riesgo": "medio",
+      "expresion": "emisiones compensadas, créditos de carbono",
+      "patrones": ["(emisiones|co2|carbono|huella( de carbono)?) compensad[oa]s?", "compensamos (nuestras |nuestro |las |el |la )?(emisiones|co2|huella)", "compensacion de (emisiones|co2|carbono|huella)", "creditos de carbono", "carbon offset"],
+      "motivo": "Informar de que se financian proyectos de compensación es lícito; usarlo para afirmar que el producto es neutro, reducido o positivo en emisiones no lo es.",
+      "alternativa": "«Financiamos un proyecto de reforestación certificado» sin vincularlo a la neutralidad del producto."
+    },
+    {
+      "id": "positivo_clima",
+      "categoria": "compensacion",
+      "riesgo": "alto",
+      "expresion": "positivo para el clima, carbono negativo",
+      "patrones": ["positiv[oa]s? para el (clima|planeta|medio ?ambiente)", "climate[- ]positive", "carbono negativ[oa]s?", "carbon[- ]negative", "impacto (ambiental |medioambiental )?positivo"],
+      "motivo": "Un impacto positivo o negativo en emisiones basado en compensaciones está prohibido.",
+      "alternativa": "Comunicar las reducciones propias y, por separado, los proyectos que se financian."
+    },
+    {
+      "id": "bajo_carbono",
+      "categoria": "compensacion",
+      "riesgo": "medio",
+      "expresion": "bajo en carbono, reducido en emisiones",
+      "patrones": ["(baj[oa]s?|reducid[oa]s?) en (carbono|co2|emisiones)"],
+      "motivo": "Lícito si se basa en reducciones reales y medidas; prohibido si se basa en compensaciones.",
+      "alternativa": "Indicar cuánto se ha reducido, respecto a qué referencia y con qué método."
+    },
+    {
+      "id": "compromiso_futuro",
+      "categoria": "futuro",
+      "riesgo": "alto",
+      "expresion": "neutros en 2030, cero emisiones en 2040",
+      "patrones": ["(neutr[a-z]*|cero emisiones|emisiones netas|net[- ]zero|huella cero|descarboniza[a-z]*|sostenibles?)[^.;\\n]{0,60}?(en|para|antes de|de aqui a)( el)?( ano)? 20[2-9][0-9]", "(en|para|antes de|de aqui a)( el)?( ano)? 20[2-9][0-9][^.;\\n]{0,40}?(neutr[a-z]*|cero emisiones|emisiones netas|net[- ]zero|huella cero)"],
+      "motivo": "Un compromiso de futuro solo es lícito si se apoya en un plan de aplicación detallado y realista, con objetivos verificables y supervisado periódicamente por un experto independiente cuyas conclusiones estén a disposición de los consumidores.",
+      "alternativa": "Publicar el plan con hitos y la verificación independiente, y enlazarlo junto al compromiso."
+    },
+    {
+      "id": "empresa_entera",
+      "categoria": "alcance",
+      "riesgo": "alto",
+      "expresion": "somos una marca sostenible, empresa ecológica",
+      "patrones": ["(somos|empresa|marca|compania|negocio|tienda|firma)( [a-z]+){0,2} (sostenible|ecologic[oa]|verde|respetuos[oa]|green)[a-z]*"],
+      "motivo": "Atribuye a toda la empresa un beneficio que suele afectar solo a una parte: un envase, un ingrediente o una línea de producción.",
+      "alternativa": "Concretar la línea, el proceso o el producto al que se refiere el beneficio."
+    },
+    {
+      "id": "cien_por_cien",
+      "categoria": "alcance",
+      "riesgo": "alto",
+      "expresion": "100 % sostenible, totalmente ecológico",
+      "patrones": ["(100 ?%|cien por cien|totalmente|completamente|integramente) (sostenibles?|ecologic[oa]s?|verdes?|respetuos[oa]s?|green|eco)"],
+      "motivo": "Una afirmación absoluta sobre todo el producto es casi imposible de demostrar.",
+      "alternativa": "Indicar el porcentaje real y la parte del producto: «envase 100 % reciclable»."
+    },
+    {
+      "id": "sello_propio",
+      "categoria": "etiqueta",
+      "riesgo": "medio",
+      "expresion": "sello eco, etiqueta verde, certificado sostenible",
+      "patrones": ["(sellos?|etiquetas?|distintivos?|certificados?|insignias?)( propios?)? (eco|verdes?|sostenibles?|ecologic[oa]s?|green|bio|eco[- ]?friendly)[a-z]*"],
+      "excluir": ["etiqueta ecologica de la (ue|union europea)", "eu ecolabel", "etiqueta energetica"],
+      "motivo": "Solo pueden mostrarse etiquetas de sostenibilidad basadas en un sistema de certificación con verificación independiente o establecidas por una autoridad pública. Los sellos creados por la propia marca quedan fuera.",
+      "alternativa": "Usar una ecoetiqueta oficial, como la EU Ecolabel, o retirar el sello."
+    },
+    {
+      "id": "sin_cfc",
+      "categoria": "requisito_legal",
+      "riesgo": "alto",
+      "expresion": "sin CFC",
+      "patrones": ["(sin|libres? de|0 ?%) (cfcs?|clorofluorocarbonos?)"],
+      "motivo": "Los CFC están prohibidos por ley en la UE. Presentar como ventaja propia lo que la ley exige a todos los productos de la categoría es una práctica prohibida.",
+      "alternativa": "Eliminar la mención o explicar que es un requisito legal común a todos los productos."
+    }
+  ]
+}
