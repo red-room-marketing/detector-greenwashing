@@ -40,152 +40,160 @@
     --rr-ink: #292929;
     --rr-black: #0D0D0D;
     --rr-red: #AE1E28;
-    --rr-red-dark: #8E1820;
     --rr-red-on-dark: #E4434D;
     --rr-white: #FFFFFF;
-    --rr-line: rgba(41, 41, 41, 0.16);
+    --borde: #D9D4BC;
     --alto: #F6CFCB;
     --medio: #F7E7A6;
     --foco: #0B57D0;
     --display: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
     --body: "Lora", Georgia, serif;
-    --gutter: clamp(16px, 4vw, 48px);
-    --section-y: clamp(3.5rem, 8vw, 7rem);
+    --ancho: 1120px;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  body { margin: 0; background: var(--rr-cream); color: var(--rr-ink); font: 400 clamp(1.0625rem, 1vw, 1.25rem)/1.6 var(--body); }
+  body { margin: 0; background: var(--rr-cream); color: var(--rr-ink); font: 400 1.0625rem/1.6 var(--body); }
   img { max-width: 100%; height: auto; display: block; }
-  a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 0.2em; }
-  a:hover { color: var(--rr-red); }
-  :focus-visible { outline: 3px solid var(--foco); outline-offset: 3px; }
+  a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+  a:hover { color: var(--rr-red); text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
   .salto { position: absolute; left: -999px; top: 0; background: var(--rr-black); color: var(--rr-cream); padding: 0.75rem 1rem; z-index: 10; }
   .salto:focus { left: 1rem; top: 1rem; }
 
-  .contenedor { max-width: 84rem; margin: 0 auto; padding: 0 var(--gutter); }
-  .meta { font-family: var(--display); font-size: clamp(0.875rem, 0.8vw, 1rem); font-weight: 700; text-transform: uppercase; line-height: 1.3; margin: 0; }
-  h1, h2, h3 { font-family: var(--display); font-weight: 700; text-transform: uppercase; line-height: calc(1.05em + 2px); margin: 0; }
-  h2 { font-size: clamp(2rem, 4.2vw, 4rem); }
-  h3 { font-size: clamp(1.25rem, 1.6vw, 1.75rem); }
-  .rejilla { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 1.5rem; }
-  @media (max-width: 860px) { .rejilla { grid-template-columns: minmax(0, 1fr); } .rejilla > * { grid-column: 1 / -1 !important; } }
-  section { padding: var(--section-y) 0; }
-  .cabecera-seccion { margin-bottom: clamp(2rem, 4vw, 3.5rem); align-items: end; row-gap: 1rem; }
-  .cabecera-seccion .meta { grid-column: 1 / span 3; }
-  .cabecera-seccion h2 { grid-column: 4 / span 9; }
-  .entradilla-seccion { grid-column: 4 / span 7; margin: 1.25rem 0 0; font-size: clamp(1.125rem, 1.3vw, 1.5rem); }
+  .contenedor { max-width: var(--ancho); margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 700px) { .contenedor { padding: 0 32px; } }
+  .meta { font-family: var(--display); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0; line-height: 1.3; margin: 0; }
+  h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 1.15; margin: 0; }
+  h2 { font-size: clamp(1.75rem, 2.6vw, 2.25rem); text-transform: uppercase; }
+  h3 { font-size: 1.25rem; }
+  section { padding: clamp(3rem, 6vw, 4.5rem) 0; }
+  .cabecera-seccion { margin-bottom: 2rem; max-width: 46rem; }
+  .cabecera-seccion .meta { color: var(--rr-red); margin-bottom: 0.5rem; }
+  .entradilla-seccion { margin: 0.75rem 0 0; font-size: 1.125rem; }
+
+  .boton { display: inline-flex; align-items: center; font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 0.9375rem; line-height: 1; text-decoration: none; padding: 0.7rem 1.1rem; border: 2px solid var(--rr-ink); background: transparent; color: var(--rr-ink); cursor: pointer; border-radius: 0; }
+  .boton.oscuro { background: var(--rr-ink); color: var(--rr-cream); }
+  .boton:hover { background: var(--rr-red); border-color: var(--rr-red); color: var(--rr-white); }
 
   /* Cabecera */
-  .barra { border-bottom: 2px solid var(--rr-ink); }
-  .barra .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-top: 1rem; padding-bottom: 1rem; }
-  .logo img { width: clamp(150px, 14vw, 210px); }
-  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0; padding: 0; }
-  nav a { font-family: var(--display); font-weight: 700; text-transform: uppercase; text-decoration: none; font-size: 1rem; }
+  .barra { background: var(--rr-cream); border-bottom: 1px solid var(--borde); }
+  .barra .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 60px; }
+  .logo img { width: 150px; }
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0; padding: 0; }
+  nav a { font-family: var(--display); font-weight: 700; text-transform: uppercase; text-decoration: none; font-size: 0.875rem; }
   nav a:hover { text-decoration: underline; }
-  @media (max-width: 860px) { nav .opcional { display: none; } }
+  @media (max-width: 760px) { nav .opcional { display: none; } }
 
-  /* Portada en tinta roja */
+  /* Portada con el comprobador al lado */
   .tinta {
     color: var(--rr-cream);
     background-color: var(--rr-red);
     background-image: url(assets/img/grano.png), linear-gradient(90deg, #CA262C 0%, #AE1E28 55%, #8E1820 100%);
     background-size: 256px 256px, 100% 100%;
     background-blend-mode: soft-light, normal;
-    overflow: hidden;
   }
-  .portada { position: relative; padding: clamp(3rem, 9vw, 8rem) 0 clamp(3rem, 7vw, 6rem); }
-  .portada .rejilla { position: relative; z-index: 1; }
-  .portada .meta { grid-column: 1 / span 12; margin-bottom: 1.5rem; }
-  .portada h1 { grid-column: 1 / span 9; font-size: clamp(2.75rem, 7.4vw, 7.5rem); line-height: 0.95; }
-  .portada .entradilla { grid-column: 1 / span 7; font-size: clamp(1.125rem, 1.4vw, 1.625rem); margin: 2rem 0 0; }
-  .portada .nota { grid-column: 1 / span 7; margin: 1rem 0 2rem; font-size: 1rem; }
-  .portada .acciones { grid-column: 1 / span 12; display: flex; flex-wrap: wrap; gap: 1rem; }
-  .r-decorativa { position: absolute; right: clamp(-2rem, 2vw, 3rem); bottom: -4%; width: clamp(180px, 26vw, 420px); z-index: 0; pointer-events: none; }
-  @media (max-width: 860px) { .r-decorativa { display: none; } }
+  .portada { padding: clamp(1.5rem, 4vw, 3rem) 0; }
+  .portada .contenedor { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+  .portada .texto { padding-top: 0.5rem; }
+  .portada .meta { margin-bottom: 1rem; }
+  .portada h1 { font-size: clamp(2.1rem, 4.2vw, 3.5rem); line-height: 1; text-transform: uppercase; }
+  .portada .entradilla { font-size: 1.0625rem; margin: 1.25rem 0 1rem; }
+  .portada .puntos { list-style: none; margin: 0 0 1.25rem; padding: 0; display: grid; gap: 0.35rem; font-size: 0.9375rem; }
+  .portada .puntos li { padding-left: 1.25rem; position: relative; }
+  .portada .puntos li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 0.6rem; height: 2px; background: var(--rr-cream); }
+  .portada .enlaces { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 0.875rem; }
+  .portada a:hover { color: var(--rr-white); }
+  @media (max-width: 860px) {
+    .portada .contenedor { grid-template-columns: minmax(0, 1fr); }
+    .portada .entradilla, .portada .puntos, .portada .enlaces { display: none; }
+    .portada .meta { margin-bottom: 0.5rem; }
+  }
 
-  .boton { display: inline-block; font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 1.0625rem; text-decoration: none; padding: 0.9rem 1.6rem; border: 2px solid currentColor; cursor: pointer; background: transparent; color: inherit; border-radius: 0; }
-  .boton.claro { background: var(--rr-cream); color: var(--rr-ink); border-color: var(--rr-cream); }
-  .boton.claro:hover { background: var(--rr-black); color: var(--rr-cream); border-color: var(--rr-black); }
-  .boton.oscuro { background: var(--rr-ink); color: var(--rr-cream); border-color: var(--rr-ink); }
-  .boton.oscuro:hover, .boton.linea:hover { background: var(--rr-red); color: var(--rr-white); border-color: var(--rr-red); }
+  .tarjeta { background: var(--rr-white); color: var(--rr-ink); border: 2px solid var(--rr-black); box-shadow: 8px 8px 0 var(--rr-black); padding: clamp(1rem, 2vw, 1.5rem); }
+  .tarjeta label { display: block; margin-bottom: 0.5rem; }
+  textarea { width: 100%; height: clamp(9rem, 26vh, 15rem); min-height: 7rem; padding: 0.75rem 0.9rem; resize: vertical; font: inherit; font-size: 1rem; line-height: 1.5; color: var(--rr-ink); background: var(--rr-white); border: 1px solid var(--rr-ink); border-radius: 0; }
+  .fila-botones { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; margin-top: 0.75rem; }
+  .fila-botones .botones { display: flex; gap: 0.5rem; }
+  .privacidad { font-size: 0.8125rem; margin: 0; }
 
-  /* Comprobador */
-  .comprobador .rejilla { row-gap: 2.5rem; }
-  .entrada { grid-column: 1 / span 6; }
-  .salida { grid-column: 7 / span 6; }
-  label.meta { display: block; margin-bottom: 0.75rem; }
-  textarea { width: 100%; min-height: 20rem; padding: 1.25rem; resize: vertical; font: inherit; line-height: 1.6; color: var(--rr-ink); background: var(--rr-white); border: 2px solid var(--rr-ink); border-radius: 0; }
-  .ayuda { font-size: 0.9375rem; margin: 0.75rem 0 1.25rem; }
-  .botones { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-
-  .veredicto { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: end; gap: 1.5rem; border-bottom: 2px solid var(--rr-ink); margin-bottom: 1.5rem; }
-  .veredicto img { width: 100%; max-width: 260px; justify-self: center; }
-  .veredicto .texto-veredicto { padding-bottom: 1.5rem; }
-  .veredicto h3 { font-size: clamp(1.5rem, 2.2vw, 2.25rem); margin: 0.5rem 0 0.75rem; }
+  .veredicto { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 1rem; align-items: center; border-top: 1px solid var(--borde); margin-top: 1rem; padding-top: 1rem; }
+  .veredicto img { width: 96px; height: 96px; object-fit: cover; object-position: top; border: 1px solid var(--rr-ink); background: var(--rr-cream); }
+  .veredicto h2 { font-size: 1.25rem; text-transform: none; margin: 0.15rem 0 0.25rem; }
   .veredicto.avisos .meta { color: var(--rr-red); }
-  .veredicto p { margin: 0; }
-  .vacio { border: 2px dashed var(--rr-ink); padding: 1.5rem; margin: 0; }
-  .marcado { background: var(--rr-white); border: 2px solid var(--rr-ink); padding: 1.25rem; white-space: pre-wrap; overflow-wrap: anywhere; margin-bottom: 2rem; }
+  .veredicto p { margin: 0; font-size: 0.9375rem; }
+  .veredicto a { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 0.875rem; }
+  .espera { border-top: 1px solid var(--borde); margin: 1rem 0 0; padding-top: 1rem; font-size: 0.9375rem; }
+
+  /* Detalle del resultado */
+  .detalle { border-bottom: 1px solid var(--borde); }
+  .detalle .columnas { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 2rem; align-items: start; }
+  .marcado { position: sticky; top: 1rem; background: var(--rr-white); border: 1px solid var(--rr-ink); padding: 1rem; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.9375rem; }
   mark { color: var(--rr-ink); padding: 0 0.1em; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.15em; }
   mark.alto { background: var(--alto); text-decoration-color: var(--rr-red); }
   mark.medio { background: var(--medio); text-decoration-style: dotted; }
-  ol.avisos { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; }
-  ol.avisos li { border-top: 2px solid var(--rr-ink); padding-top: 1rem; }
-  .etiqueta { display: inline-block; font-family: var(--display); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; padding: 0.1rem 0.5rem; margin-right: 0.6rem; border: 2px solid var(--rr-ink); }
+  ol.avisos { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  ol.avisos li { background: var(--rr-white); border: 1px solid var(--borde); border-left: 4px solid var(--rr-red); padding: 1rem 1.25rem; }
+  ol.avisos li.medio { border-left-color: #C9A227; }
+  .etiqueta { display: inline-block; font-family: var(--display); font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; padding: 0.05rem 0.45rem; margin-right: 0.5rem; border: 1px solid var(--rr-ink); }
   .etiqueta.alto { background: var(--alto); }
   .etiqueta.medio { background: var(--medio); }
-  .avisos h4 { font-family: var(--display); font-size: clamp(1.25rem, 1.5vw, 1.625rem); text-transform: uppercase; margin: 0.6rem 0 0.5rem; line-height: 1.15; }
-  .avisos p { margin: 0.4rem 0; }
-  .base { font-size: 0.875rem; opacity: 0.85; }
-  @media (max-width: 860px) { .entrada, .salida { grid-column: 1 / -1; } .veredicto { grid-template-columns: minmax(0, 1fr); } .veredicto img { max-width: 200px; } }
+  .avisos h3 { font-size: 1.25rem; margin: 0.5rem 0 0.4rem; }
+  .avisos p { margin: 0.3rem 0; font-size: 0.9375rem; }
+  .base { font-size: 0.8125rem !important; opacity: 0.85; }
+  @media (max-width: 860px) { .detalle .columnas { grid-template-columns: minmax(0, 1fr); } .marcado { position: static; } }
 
   /* Por qué importa ahora */
   .negro { background-color: var(--rr-black); background-image: url(assets/img/grano.png); background-size: 256px 256px; background-blend-mode: soft-light; color: var(--rr-cream); }
+  .negro .cabecera-seccion .meta { color: var(--rr-red-on-dark); }
   .negro a:hover { color: var(--rr-red-on-dark); }
-  .razones { list-style: none; margin: 0; padding: 0; counter-reset: razon; row-gap: 2.5rem; }
-  .razones li { grid-column: span 6; counter-increment: razon; border-top: 2px solid var(--rr-cream); padding-top: 1.25rem; display: grid; grid-template-columns: 4rem minmax(0, 1fr); column-gap: 1rem; }
-  .razones li::before { content: counter(razon, decimal-leading-zero); font-family: var(--display); font-weight: 700; font-size: clamp(1.75rem, 2.4vw, 2.75rem); line-height: 1; color: var(--rr-red-on-dark); }
-  .razones h3 { margin-bottom: 0.75rem; }
-  .razones p { margin: 0; grid-column: 2; }
-  .razones h3 { grid-column: 2; }
-  .cierre { grid-column: 4 / span 7; margin: 3rem 0 0; }
+  .razones { list-style: none; margin: 0; padding: 0; counter-reset: razon; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 2.5rem; }
+  .razones li { counter-increment: razon; border-top: 1px solid rgba(251, 248, 227, 0.35); padding-top: 1rem; display: grid; grid-template-columns: 2.75rem minmax(0, 1fr); column-gap: 0.75rem; }
+  .razones li::before { content: counter(razon, decimal-leading-zero); grid-row: span 2; font-family: var(--display); font-weight: 700; font-size: 1.5rem; line-height: 1.1; color: var(--rr-red-on-dark); }
+  .razones h3 { margin-bottom: 0.4rem; }
+  .razones p { margin: 0; font-size: 1rem; }
+  .cierre { margin: 2rem 0 0; max-width: 46rem; }
+  @media (max-width: 760px) { .razones { grid-template-columns: minmax(0, 1fr); } }
 
   /* Para quién */
   .blanco { background: var(--rr-white); }
-  .perfiles { row-gap: 2.5rem; }
-  .perfil { grid-column: span 4; border-top: 2px solid var(--rr-ink); padding-top: 1.25rem; }
-  .perfil h3 { margin-bottom: 0.75rem; }
-  .perfil p { margin: 0; }
-  @media (max-width: 1100px) and (min-width: 861px) { .perfil, .razones li { grid-column: span 6; } }
+  .perfiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .perfil { border: 1px solid var(--borde); padding: 1.25rem; background: var(--rr-cream); }
+  .perfil h3 { margin-bottom: 0.5rem; text-transform: uppercase; font-size: 1.125rem; }
+  .perfil p { margin: 0; font-size: 1rem; }
+  @media (max-width: 960px) { .perfiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 600px) { .perfiles { grid-template-columns: minmax(0, 1fr); } }
 
   /* Qué revisa */
-  .categorias { row-gap: 2rem; }
-  .categoria { grid-column: span 4; }
-  .categoria h3 { font-size: clamp(1.125rem, 1.3vw, 1.5rem); margin-bottom: 0.5rem; color: var(--rr-red); }
-  .categoria p { margin: 0; }
-  .enlace-articulo { grid-column: 4 / span 9; margin: 2.5rem 0 0; }
+  .tabla-categorias { width: 100%; border-collapse: collapse; background: var(--rr-white); font-size: 1rem; }
+  .tabla-categorias th, .tabla-categorias td { text-align: left; vertical-align: top; padding: 0.75rem 1rem; border: 1px solid var(--borde); }
+  .tabla-categorias th { font-family: var(--display); text-transform: uppercase; font-size: 0.875rem; background: var(--rr-cream); }
+  .tabla-categorias td:first-child { font-family: var(--display); font-weight: 700; }
+  .tabla-categorias td:last-child { font-size: 0.875rem; }
+  .desplazable { overflow-x: auto; }
+  .enlace-articulo { margin: 1.5rem 0 0; }
 
   /* Créditos */
-  .creditos { border-top: 2px solid var(--rr-ink); }
-  .creditos .cuerpo { grid-column: 4 / span 8; }
-  .creditos .cuerpo p { margin: 0 0 1.25rem; }
-  .obligatorio { border: 2px solid var(--rr-ink); background: var(--rr-white); padding: 1.5rem; margin: 0 0 1.5rem; }
-  .obligatorio .meta { color: var(--rr-red); margin-bottom: 0.5rem; }
-  blockquote { margin: 1rem 0 0; padding: 1rem 1.25rem; background: var(--rr-cream); border-left: 6px solid var(--rr-red); font-style: italic; }
-  dl.licencias { margin: 0 0 1.5rem; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.75rem 1.5rem; }
-  dl.licencias dt { font-family: var(--display); font-weight: 700; text-transform: uppercase; }
+  .creditos { border-top: 1px solid var(--borde); }
+  .creditos .cuerpo { max-width: 46rem; }
+  .creditos .cuerpo > p { margin: 0 0 1.25rem; }
+  .obligatorio { border: 2px solid var(--rr-ink); background: var(--rr-white); padding: 1.25rem; margin: 0 0 1.5rem; }
+  .obligatorio .meta { color: var(--rr-red); margin-bottom: 0.4rem; }
+  .obligatorio p { margin: 0; }
+  blockquote { margin: 0.75rem 0 0; padding: 0.75rem 1rem; background: var(--rr-cream); border-left: 4px solid var(--rr-red); font-style: italic; }
+  dl.licencias { margin: 0 0 1.5rem; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 0.6rem 1.5rem; }
+  dl.licencias dt { font-family: var(--display); font-weight: 700; text-transform: uppercase; font-size: 0.9375rem; }
   dl.licencias dd { margin: 0; }
   @media (max-width: 600px) { dl.licencias { grid-template-columns: minmax(0, 1fr); } dl.licencias dd { margin-bottom: 0.5rem; } }
-  .aviso-legal { font-size: 0.9375rem; }
+  .aviso-legal { font-size: 0.875rem; }
 
   /* Pie */
-  footer { padding: clamp(2.5rem, 5vw, 4rem) 0; }
-  footer .contenedor { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 2rem; align-items: start; }
-  footer img { width: 220px; }
+  footer { padding: 2.5rem 0; font-size: 0.9375rem; }
+  footer .contenedor { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem; align-items: start; }
+  footer img { width: 170px; }
   footer p { margin: 0 0 0.75rem; }
-  footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
-  @media (max-width: 760px) { footer .contenedor { grid-template-columns: minmax(0, 1fr); } }
+  footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+  @media (max-width: 700px) { footer .contenedor { grid-template-columns: minmax(0, 1fr); } }
 </style>
 </head>
 <body>
@@ -208,55 +216,57 @@
 
 <main>
   <section class="tinta portada" aria-labelledby="titulo">
-    <div class="contenedor rejilla">
-      <p class="meta">Herramienta abierta · Directiva (UE) 2024/825</p>
-      <h1 id="titulo">Comprobador de reclamos ambientales</h1>
-      <p class="entradilla">Pega un texto de tu web, de un envase, de un anuncio o de una publicación en redes. El comprobador señala las expresiones ambientales que la Directiva (UE) 2024/825 prohíbe o limita y propone cómo reformularlas con datos.</p>
-      <p class="nota">El texto se analiza en tu navegador. No se guarda ni se envía a ningún servidor.</p>
-      <div class="acciones">
-        <a class="boton claro" href="#comprobador">Revisar un texto</a>
-        <a class="boton" href="#por-que">Por qué importa ahora</a>
-      </div>
-    </div>
-    <img class="r-decorativa" src="assets/img/rr-r-recortada.png" width="351" height="491" alt="">
-  </section>
-
-  <section class="comprobador" id="comprobador" aria-labelledby="titulo-comprobador">
     <div class="contenedor">
-      <div class="rejilla cabecera-seccion">
-        <p class="meta">Comprobador</p>
-        <h2 id="titulo-comprobador">Revisa tu texto</h2>
+      <div class="texto">
+        <p class="meta">Herramienta abierta · Directiva (UE) 2024/825</p>
+        <h1 id="titulo">Comprobador de reclamos ambientales</h1>
+        <p class="entradilla">Pega un texto de tu web, de un envase, de un anuncio o de una publicación en redes. El comprobador señala las expresiones ambientales que la Directiva (UE) 2024/825 prohíbe o limita y propone cómo reformularlas con datos.</p>
+        <ul class="puntos">
+          <li>22 expresiones de riesgo, con el punto de la directiva que las regula</li>
+          <li>Una alternativa basada en datos para cada aviso</li>
+          <li>Gratis, en español y de código abierto</li>
+        </ul>
+        <p class="enlaces"><a href="#por-que">Por qué importa ahora</a> <a href="#para-quien">Para quién es útil</a></p>
       </div>
-      <div class="rejilla">
-        <div class="entrada">
-          <label class="meta" for="texto">Texto que quieres revisar</label>
-          <textarea id="texto" spellcheck="false" aria-describedby="ayuda-texto"></textarea>
-          <p class="ayuda" id="ayuda-texto">Funciona con textos en español. El resultado se actualiza mientras escribes.</p>
+
+      <div class="tarjeta" id="comprobador">
+        <label class="meta" for="texto">Texto que quieres revisar</label>
+        <textarea id="texto" spellcheck="false" placeholder="Por ejemplo: Nuestro envase ecológico es 100&nbsp;% sostenible." aria-describedby="privacidad"></textarea>
+        <div class="fila-botones">
           <div class="botones">
             <button type="button" class="boton oscuro" id="ejemplo">Cargar un ejemplo</button>
-            <button type="button" class="boton linea" id="borrar">Borrar</button>
+            <button type="button" class="boton" id="borrar">Borrar</button>
           </div>
+          <p class="privacidad" id="privacidad">Se analiza en tu navegador. No se guarda.</p>
         </div>
-        <div class="salida" aria-labelledby="titulo-resultado">
-          <h3 class="meta" id="titulo-resultado">Resultado</h3>
-          <div id="estado" role="status" aria-live="polite">
-            <p class="vacio">Escribe o pega un texto para ver el resultado.</p>
-          </div>
-          <div id="marcado" class="marcado" hidden></div>
-          <ol class="avisos" id="avisos" aria-label="Expresiones encontradas"></ol>
+        <div id="estado" role="status" aria-live="polite">
+          <p class="espera">El resultado aparece aquí mientras escribes.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="negro" id="por-que" aria-labelledby="titulo-por-que">
+  <section class="detalle" id="detalle" aria-labelledby="titulo-detalle" hidden>
     <div class="contenedor">
-      <div class="rejilla cabecera-seccion">
+      <div class="cabecera-seccion">
+        <p class="meta">Resultado</p>
+        <h2 id="titulo-detalle">Detalle de los avisos</h2>
+      </div>
+      <div class="columnas">
+        <div id="marcado" class="marcado" aria-label="Texto revisado con las expresiones marcadas"></div>
+        <ol class="avisos" id="avisos" aria-label="Expresiones encontradas"></ol>
+      </div>
+    </div>
+  </section>
+
+<section class="negro" id="por-que" aria-labelledby="titulo-por-que">
+    <div class="contenedor">
+      <div class="cabecera-seccion">
         <p class="meta">Por qué ahora</p>
         <h2 id="titulo-por-que">Por qué importa ahora</h2>
         <p class="entradilla-seccion">La directiva se aplica desde el 27 de septiembre de 2026 a cualquier empresa que se dirija a consumidores, sea cual sea su tamaño. Estos son los cambios que más afectan a consultoras, agencias y empresas.</p>
       </div>
-      <ol class="rejilla razones">
+      <ol class="razones">
         <li>
           <h3>Lista negra, sin análisis caso a caso</h3>
           <p>Las nuevas prácticas se incorporan a la lista de prácticas desleales en cualquier circunstancia. Ya no hay que demostrar que una frase ha engañado a alguien: basta con haberla usado.</p>
@@ -282,7 +292,7 @@
           <p>Dejar de comunicar, el llamado greenhushing, deja sin argumentos a quien sí ha reducido su impacto. La salida es sustituir los adjetivos por datos que se puedan verificar.</p>
         </li>
       </ol>
-      <div class="rejilla">
+      <div>
         <p class="cierre">La explicación completa, con una tabla de alternativas, está en el artículo <a href="https://redroom.es/directiva-2024-825-afirmaciones-ambientales/">Directiva 2024/825: las afirmaciones ambientales que ya no puedes usar en tu publicidad</a>.</p>
       </div>
     </div>
@@ -290,11 +300,11 @@
 
   <section class="blanco" id="para-quien" aria-labelledby="titulo-para-quien">
     <div class="contenedor">
-      <div class="rejilla cabecera-seccion">
+      <div class="cabecera-seccion">
         <p class="meta">Para quién</p>
         <h2 id="titulo-para-quien">Para quién es útil</h2>
       </div>
-      <div class="rejilla perfiles">
+      <div class="perfiles">
         <article class="perfil">
           <h3>Agencias de marketing y comunicación</h3>
           <p>Que trabajan para clientes de alimentación, moda, cosmética, energía, movilidad, construcción o turismo, sectores en los que las afirmaciones ambientales son habituales.</p>
@@ -325,28 +335,34 @@
 
   <section aria-labelledby="titulo-que-revisa">
     <div class="contenedor">
-      <div class="rejilla cabecera-seccion">
+      <div class="cabecera-seccion">
         <p class="meta">Qué revisa</p>
         <h2 id="titulo-que-revisa">Seis tipos de afirmación</h2>
       </div>
-      <div class="rejilla categorias">
-        <div class="categoria"><h3>Afirmaciones genéricas</h3><p>«Ecológico», «verde» o «sostenible» sin explicar en qué consiste el beneficio.</p></div>
-        <div class="categoria"><h3>Neutralidad por compensación</h3><p>«Neutro en carbono» o «positivo para el clima» basados en créditos de carbono.</p></div>
-        <div class="categoria"><h3>Beneficio parcial como total</h3><p>Atribuir a toda la marca o a todo el producto lo que afecta a una parte.</p></div>
-        <div class="categoria"><h3>Compromisos de futuro</h3><p>«Cero emisiones en 2040» sin un plan detallado y verificado por un experto independiente.</p></div>
-        <div class="categoria"><h3>Sellos propios</h3><p>Etiquetas de sostenibilidad que no proceden de una certificación ni de una autoridad pública.</p></div>
-        <div class="categoria"><h3>Requisitos legales como ventaja</h3><p>Presentar como mérito propio lo que la ley exige a todos, como «sin CFC».</p></div>
+      <div class="desplazable">
+        <table class="tabla-categorias">
+          <thead><tr><th scope="col">Tipo</th><th scope="col">Ejemplos</th><th scope="col">Base legal</th></tr></thead>
+          <tbody>
+            <tr><td>Afirmaciones genéricas</td><td>«Ecológico», «verde» o «sostenible» sin explicar en qué consiste el beneficio.</td><td>Directiva 2005/29/CE, anexo I, punto 4 bis</td></tr>
+            <tr><td>Neutralidad por compensación</td><td>«Neutro en carbono» o «positivo para el clima» basados en créditos de carbono.</td><td>Anexo I, punto 4 quater</td></tr>
+            <tr><td>Beneficio parcial como total</td><td>Atribuir a toda la marca o a todo el producto lo que afecta a una parte.</td><td>Anexo I, punto 4 ter</td></tr>
+            <tr><td>Compromisos de futuro</td><td>«Cero emisiones en 2040» sin un plan detallado y verificado por un experto independiente.</td><td>Artículo 6, apartado 2, letra d)</td></tr>
+            <tr><td>Sellos propios</td><td>Etiquetas de sostenibilidad que no proceden de una certificación ni de una autoridad pública.</td><td>Anexo I, punto 2 bis</td></tr>
+            <tr><td>Requisitos legales como ventaja</td><td>Presentar como mérito propio lo que la ley exige a todos, como «sin CFC».</td><td>Anexo I, punto 10 bis</td></tr>
+          </tbody>
+        </table>
       </div>
+      <p class="enlace-articulo">Todos estos puntos los añade la Directiva (UE) 2024/825 a la Directiva 2005/29/CE de prácticas comerciales desleales.</p>
     </div>
   </section>
 
   <section class="creditos" id="creditos" aria-labelledby="titulo-creditos">
     <div class="contenedor">
-      <div class="rejilla cabecera-seccion">
+      <div class="cabecera-seccion">
         <p class="meta">Créditos</p>
         <h2 id="titulo-creditos">Créditos y licencia</h2>
       </div>
-      <div class="rejilla">
+      <div>
         <div class="cuerpo">
           <p>Es un proyecto abierto. Puedes usar el comprobador, copiar los datos, adaptarlos e integrarlos en tus propias herramientas, también con fines comerciales, y proponer mejoras en GitHub.</p>
           <div class="obligatorio">
@@ -389,11 +405,12 @@
 <script>
 (function () {
   'use strict';
-  var EJEMPLO = 'Somos una marca sostenible y respetuosa con el medio ambiente.\n\nNuestro nuevo envase ecológico es 100 % sostenible y el café es neutro en carbono gracias a la compra de créditos de carbono. Además, seremos cero emisiones netas en 2035.\n\nTodos nuestros aerosoles son sin CFC y llevan nuestro sello verde.';
+  var EJEMPLO = 'Somos una marca sostenible y respetuosa con el medio ambiente.\n\nNuestro nuevo envase ecológico es 100\u00a0% sostenible y el café es neutro en carbono gracias a la compra de créditos de carbono. Además, seremos cero emisiones netas en 2035.\n\nTodos nuestros aerosoles son sin CFC y llevan nuestro sello verde.';
   var campo = document.getElementById('texto');
   var estadoEl = document.getElementById('estado');
   var marcadoEl = document.getElementById('marcado');
   var avisosEl = document.getElementById('avisos');
+  var detalleEl = document.getElementById('detalle');
   var datos = null;
   var temporizador = null;
 
@@ -407,24 +424,30 @@
   function veredicto(r) {
     estadoEl.textContent = '';
     if (!r) {
-      estadoEl.appendChild(el('p', 'vacio', 'Escribe o pega un texto para ver el resultado.'));
+      estadoEl.appendChild(el('p', 'espera', 'El resultado aparece aquí mientras escribes.'));
       return;
     }
     var limpio = r.total === 0;
     var caja = el('div', 'veredicto ' + (limpio ? 'limpio' : 'avisos'));
     var img = el('img');
     img.src = limpio ? 'assets/img/resultado-limpio.webp' : 'assets/img/resultado-avisos.webp';
-    img.width = 640; img.height = 640;
+    img.width = 96; img.height = 96;
     img.alt = limpio
       ? 'Grabado de una mujer a la que le brotan ramas con hojas de la cabeza'
       : 'Grabado de un hombre con los ojos muy abiertos y un tornillo clavado en la cabeza';
     caja.appendChild(img);
-    var t = el('div', 'texto-veredicto');
+    var t = el('div');
     t.appendChild(el('p', 'meta', limpio ? 'Sin avisos' : (r.total === 1 ? '1 aviso' : r.total + ' avisos')));
-    t.appendChild(el('h3', null, limpio ? 'No hemos encontrado expresiones de riesgo' : 'Hay expresiones que conviene revisar'));
-    t.appendChild(el('p', null, limpio
-      ? 'Revisa igualmente que cada dato ambiental se pueda demostrar con documentación.'
-      : r.alto + ' de riesgo alto y ' + r.medio + ' de riesgo medio. Debajo tienes cada una, con el motivo y una alternativa.'));
+    t.appendChild(el('h2', null, limpio ? 'No hemos encontrado expresiones de riesgo' : 'Hay expresiones que conviene revisar'));
+    if (limpio) {
+      t.appendChild(el('p', null, 'Revisa igualmente que cada dato ambiental se pueda demostrar con documentación.'));
+    } else {
+      var p = el('p', null, r.alto + ' de riesgo alto y ' + r.medio + ' de riesgo medio. ');
+      var a = el('a', null, 'Ver el detalle');
+      a.href = '#detalle';
+      p.appendChild(a);
+      t.appendChild(p);
+    }
     caja.appendChild(t);
     estadoEl.appendChild(caja);
   }
@@ -448,18 +471,17 @@
       pos = t.fin;
     });
     marcadoEl.appendChild(document.createTextNode(texto.slice(pos)));
-    marcadoEl.hidden = tramos.length === 0;
   }
 
   function pintarAvisos(avisos) {
     avisosEl.textContent = '';
     avisos.forEach(function (a) {
-      var li = el('li');
+      var li = el('li', a.riesgo);
       var cab = el('p');
       cab.appendChild(el('span', 'etiqueta ' + a.riesgo, 'Riesgo ' + a.riesgo));
       cab.appendChild(el('span', 'meta', a.categoriaNombre));
       li.appendChild(cab);
-      li.appendChild(el('h4', null, '«' + a.texto + '»'));
+      li.appendChild(el('h3', null, '«' + a.texto + '»'));
       li.appendChild(el('p', null, a.motivo));
       var alt = el('p');
       alt.appendChild(el('strong', null, 'Alternativa: '));
@@ -475,14 +497,14 @@
     var texto = campo.value;
     if (!texto.trim()) {
       veredicto(null);
-      marcadoEl.hidden = true;
-      avisosEl.textContent = '';
+      detalleEl.hidden = true;
       return;
     }
     var avisos = ComprobadorReclamos.comprobar(texto, datos);
     veredicto(ComprobadorReclamos.resumen(avisos));
     pintarMarcado(texto, avisos);
     pintarAvisos(avisos);
+    detalleEl.hidden = avisos.length === 0;
   }
 
   campo.addEventListener('input', function () {
@@ -492,7 +514,6 @@
   document.getElementById('ejemplo').addEventListener('click', function () {
     campo.value = EJEMPLO;
     revisar();
-    campo.focus();
   });
   document.getElementById('borrar').addEventListener('click', function () {
     campo.value = '';
