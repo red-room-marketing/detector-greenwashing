@@ -8,7 +8,7 @@
 
 Desde el 27 de septiembre de 2026, llamar «ecológico», «sostenible» o «neutro en carbono» a un producto sin poder demostrarlo es una práctica desleal. Pega tu texto y el detector te dice qué frases sobran, por qué y cómo decirlo con datos.
 
-**Pruébalo:** <https://red-room-marketing.github.io/marketingetico/>
+**Pruébalo:** <https://red-room-marketing.github.io/detector-greenwashing/>
 
 Tu texto no sale de tu navegador: no se guarda ni se envía a ningún servidor.
 
@@ -72,15 +72,15 @@ Cada frase detectada tiene un nivel de riesgo:
 
 ### En el navegador
 
-Abre <https://red-room-marketing.github.io/marketingetico/> y pega tu texto. El resultado aparece mientras escribes.
+Abre <https://red-room-marketing.github.io/detector-greenwashing/> y pega tu texto. El resultado aparece mientras escribes.
 
 ### En la línea de comandos
 
 Necesita Node.js 18 o posterior.
 
 ```bash
-git clone https://github.com/red-room-marketing/marketingetico.git
-cd marketingetico
+git clone https://github.com/red-room-marketing/detector-greenwashing.git
+cd detector-greenwashing
 node bin/comprobar.js mi-web.html textos/envase.txt
 echo "Nuestro café es neutro en carbono" | node bin/comprobar.js
 ```
