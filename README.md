@@ -2,7 +2,7 @@
 
 Herramienta abierta y en español que detecta en un texto las afirmaciones ambientales que la **Directiva (UE) 2024/825** prohíbe o restringe: «ecológico», «verde», «sostenible», «neutro en carbono», «100 % sostenible», «cero emisiones en 2040», sellos propios… Para cada una explica por qué es un problema, propone una alternativa defendible y cita la base legal.
 
-**Pruébala en el navegador:** <https://nachomegran.github.io/marketingetico/>
+**Pruébala en el navegador:** <https://red-room-marketing.github.io/marketingetico/>
 
 El texto se revisa en tu navegador y no se envía a ningún servidor.
 
@@ -36,14 +36,14 @@ La explicación completa, con una tabla de alternativas, está en el artículo [
 
 ### En el navegador
 
-Abre <https://nachomegran.github.io/marketingetico/>, pega el texto y revisa los avisos.
+Abre <https://red-room-marketing.github.io/marketingetico/>, pega el texto y revisa los avisos.
 
 ### En la línea de comandos
 
 Necesita Node.js 18 o posterior.
 
 ```bash
-git clone https://github.com/NachoMeGran/marketingetico.git
+git clone https://github.com/red-room-marketing/marketingetico.git
 cd marketingetico
 node bin/comprobar.js mi-web.html textos/envase.txt
 echo "Nuestro café es neutro en carbono" | node bin/comprobar.js
