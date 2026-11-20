@@ -1,15 +1,15 @@
 {
-  "name": "marketing-etico",
+  "name": "detector-greenwashing",
   "version": "1.0.0",
-  "description": "Comprobador de reclamos ambientales en español según la Directiva (UE) 2024/825: detecta afirmaciones como «ecológico», «neutro en carbono» o «100 % sostenible» y propone alternativas.",
+  "description": "Detector de greenwashing en español: revisa un texto y señala las afirmaciones ambientales que la Directiva (UE) 2024/825 prohíbe o limita, como «ecológico», «neutro en carbono» o «100 % sostenible», con una alternativa para cada una.",
   "main": "src/comprobador.js",
-  "bin": { "comprobar-reclamos": "bin/comprobar.js" },
+  "bin": { "detector-greenwashing": "bin/comprobar.js" },
   "files": ["src", "bin", "datos"],
   "scripts": {
     "test": "node --test && node scripts/csv.js --comprobar",
     "csv": "node scripts/csv.js"
   },
-  "keywords": ["greenwashing", "directiva 2024/825", "green claims", "marketing ético", "sostenibilidad", "reclamos ambientales", "ecodiseño", "español"],
+  "keywords": ["greenwashing", "directiva 2024/825", "green claims", "marketing ético", "sostenibilidad", "afirmaciones ambientales", "alegaciones ambientales", "blanqueo ecológico", "ecodiseño", "español"],
   "author": "Red Room® (https://redroom.es)",
   "homepage": "https://red-room-marketing.github.io/marketingetico/",
   "repository": { "type": "git", "url": "https://github.com/red-room-marketing/marketingetico.git" },

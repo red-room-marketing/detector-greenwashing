@@ -2,13 +2,13 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { comprobar, resumen, normalizar } = require('../src/comprobador.js');
-const datos = require('../datos/reclamos.json');
+const datos = require('../datos/afirmaciones.json');
 
 const ids = (t) => comprobar(t, datos).map((a) => a.id);
 
 test('los datos son coherentes', () => {
   const vistos = new Set();
-  for (const r of datos.reclamos) {
+  for (const r of datos.afirmaciones) {
     assert.ok(!vistos.has(r.id), `id duplicado: ${r.id}`);
     vistos.add(r.id);
     assert.ok(datos.categorias[r.categoria], `categoría desconocida en ${r.id}`);

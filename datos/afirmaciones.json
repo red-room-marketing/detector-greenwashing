@@ -1,5 +1,5 @@
 {
-  "nombre": "Reclamos ambientales que conviene revisar según la Directiva (UE) 2024/825",
+  "nombre": "Afirmaciones ambientales de riesgo según la Directiva (UE) 2024/825 (greenwashing)",
   "version": "1.0.0",
   "fecha": "2026-11-20",
   "autor": "Red Room® (https://redroom.es)",
@@ -11,27 +11,27 @@
       "base": "Directiva 2005/29/CE, anexo I, punto 4 bis, añadido por la Directiva (UE) 2024/825"
     },
     "compensacion": {
-      "nombre": "Neutralidad o impacto basados en la compensación de emisiones",
+      "nombre": "Neutralidad por compensación",
       "base": "Directiva 2005/29/CE, anexo I, punto 4 quater, añadido por la Directiva (UE) 2024/825"
     },
     "futuro": {
-      "nombre": "Compromiso ambiental de futuro",
+      "nombre": "Promesa de futuro",
       "base": "Directiva 2005/29/CE, artículo 6, apartado 2, letra d), añadida por la Directiva (UE) 2024/825"
     },
     "alcance": {
-      "nombre": "Beneficio parcial atribuido al producto o a la empresa entera",
+      "nombre": "La parte por el todo",
       "base": "Directiva 2005/29/CE, anexo I, punto 4 ter, añadido por la Directiva (UE) 2024/825"
     },
     "etiqueta": {
-      "nombre": "Sello o etiqueta de sostenibilidad",
+      "nombre": "Sello propio",
       "base": "Directiva 2005/29/CE, anexo I, punto 2 bis, añadido por la Directiva (UE) 2024/825"
     },
     "requisito_legal": {
-      "nombre": "Requisito legal presentado como ventaja",
+      "nombre": "Presumir de lo obligatorio",
       "base": "Directiva 2005/29/CE, anexo I, punto 10 bis, añadido por la Directiva (UE) 2024/825"
     }
   },
-  "reclamos": [
+  "afirmaciones": [
     {
       "id": "ecologico",
       "categoria": "generica",

@@ -3,23 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Comprobador de reclamos ambientales · Directiva 2024/825 · Red Room®</title>
-<meta name="description" content="Comprueba si un texto usa afirmaciones ambientales que la Directiva (UE) 2024/825 prohíbe o limita: «ecológico», «neutro en carbono», «100 % sostenible». Gratis, en español y sin enviar el texto a ningún servidor. Una herramienta abierta de Red Room®.">
+<title>Detector de greenwashing · Directiva 2024/825 · Red Room®</title>
+<meta name="description" content="Pega tu texto y descubre qué afirmaciones ambientales incumplen la Directiva (UE) 2024/825: «ecológico», «sostenible», «neutro en carbono»… Gratis, en español y sin enviar tu texto a ningún servidor.">
 <link rel="canonical" href="https://red-room-marketing.github.io/marketingetico/">
 <link rel="icon" href="assets/img/redroom-favicon.png">
 <link rel="preload" href="assets/fuentes/roboto-condensed-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fuentes/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Red Room®">
-<meta property="og:title" content="Comprobador de reclamos ambientales (Directiva 2024/825)">
-<meta property="og:description" content="Detecta afirmaciones ambientales de riesgo en textos en español y propone alternativas con datos. Herramienta abierta de Red Room®.">
+<meta property="og:title" content="Detector de greenwashing (Directiva 2024/825)">
+<meta property="og:description" content="Pega tu texto y descubre qué frases pueden ser greenwashing según la Directiva (UE) 2024/825, con una alternativa para cada una. Herramienta abierta de Red Room®.">
 <meta property="og:url" content="https://red-room-marketing.github.io/marketingetico/">
 <meta property="og:locale" content="es_ES">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Comprobador de reclamos ambientales (Directiva 2024/825)",
+  "name": "Detector de greenwashing (Directiva 2024/825)",
   "url": "https://red-room-marketing.github.io/marketingetico/",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Cualquiera con navegador web",
@@ -197,14 +197,14 @@
 </style>
 </head>
 <body>
-<a class="salto" href="#comprobador">Saltar al comprobador</a>
+<a class="salto" href="#detector">Saltar al detector</a>
 
 <header class="barra">
   <div class="contenedor">
     <a class="logo" href="https://redroom.es/"><img src="assets/img/redroom-logo.png" width="560" height="113" alt="Red Room®, ir a redroom.es"></a>
     <nav aria-label="Secciones">
       <ul>
-        <li><a href="#comprobador">Comprobador</a></li>
+        <li><a href="#detector">Detector</a></li>
         <li class="opcional"><a href="#por-que">Por qué ahora</a></li>
         <li class="opcional"><a href="#para-quien">Para quién</a></li>
         <li class="opcional"><a href="#creditos">Créditos</a></li>
@@ -218,29 +218,29 @@
   <section class="tinta portada" aria-labelledby="titulo">
     <div class="contenedor">
       <div class="texto">
-        <p class="meta">Herramienta abierta · Directiva (UE) 2024/825</p>
-        <h1 id="titulo">Comprobador de reclamos ambientales</h1>
-        <p class="entradilla">Pega un texto de tu web, de un envase, de un anuncio o de una publicación en redes. El comprobador señala las expresiones ambientales que la Directiva (UE) 2024/825 prohíbe o limita y propone cómo reformularlas con datos.</p>
+        <p class="meta">Directiva (UE) 2024/825 · Herramienta gratuita y abierta</p>
+        <h1 id="titulo">Detector de greenwashing</h1>
+        <p class="entradilla">Desde el 27 de septiembre, llamar «ecológico», «sostenible» o «neutro en carbono» a un producto sin poder demostrarlo es una práctica desleal. Pega tu texto: te decimos qué frases sobran y cómo decirlo con datos.</p>
         <ul class="puntos">
-          <li>22 expresiones de riesgo, con el punto de la directiva que las regula</li>
-          <li>Una alternativa basada en datos para cada aviso</li>
-          <li>Gratis, en español y de código abierto</li>
+          <li>Revisado punto por punto con la Directiva (UE) 2024/825</li>
+          <li>Una alternativa defendible para cada frase</li>
+          <li>Gratis, abierto y sin enviar tu texto a ningún sitio</li>
         </ul>
-        <p class="enlaces"><a href="#por-que">Por qué importa ahora</a> <a href="#para-quien">Para quién es útil</a></p>
+        <p class="enlaces"><a href="#por-que">Por qué importa ahora</a> <a href="#para-quien">Para quién es</a></p>
       </div>
 
-      <div class="tarjeta" id="comprobador">
-        <label class="meta" for="texto">Texto que quieres revisar</label>
-        <textarea id="texto" spellcheck="false" placeholder="Por ejemplo: Nuestro envase ecológico es 100&nbsp;% sostenible." aria-describedby="privacidad"></textarea>
+      <div class="tarjeta" id="detector">
+        <label class="meta" for="texto">Pega aquí tu texto</label>
+        <textarea id="texto" spellcheck="false" placeholder="Por ejemplo: nuestro envase ecológico es 100&nbsp;% sostenible." aria-describedby="privacidad"></textarea>
         <div class="fila-botones">
           <div class="botones">
-            <button type="button" class="boton oscuro" id="ejemplo">Cargar un ejemplo</button>
+            <button type="button" class="boton oscuro" id="ejemplo">Probar con un ejemplo</button>
             <button type="button" class="boton" id="borrar">Borrar</button>
           </div>
-          <p class="privacidad" id="privacidad">Se analiza en tu navegador. No se guarda.</p>
+          <p class="privacidad" id="privacidad">Tu texto no sale de tu navegador.</p>
         </div>
         <div id="estado" role="status" aria-live="polite">
-          <p class="espera">El resultado aparece aquí mientras escribes.</p>
+          <p class="espera">Aquí verás el resultado mientras escribes.</p>
         </div>
       </div>
     </div>
@@ -250,51 +250,49 @@
     <div class="contenedor">
       <div class="cabecera-seccion">
         <p class="meta">Resultado</p>
-        <h2 id="titulo-detalle">Detalle de los avisos</h2>
+        <h2 id="titulo-detalle">Qué cambiar y por qué</h2>
       </div>
       <div class="columnas">
-        <div id="marcado" class="marcado" aria-label="Texto revisado con las expresiones marcadas"></div>
-        <ol class="avisos" id="avisos" aria-label="Expresiones encontradas"></ol>
+        <div id="marcado" class="marcado" aria-label="Tu texto con las frases de riesgo marcadas"></div>
+        <ol class="avisos" id="avisos" aria-label="Frases de riesgo"></ol>
       </div>
     </div>
   </section>
 
-<section class="negro" id="por-que" aria-labelledby="titulo-por-que">
+  <section class="negro" id="por-que" aria-labelledby="titulo-por-que">
     <div class="contenedor">
       <div class="cabecera-seccion">
         <p class="meta">Por qué ahora</p>
-        <h2 id="titulo-por-que">Por qué importa ahora</h2>
-        <p class="entradilla-seccion">La directiva se aplica desde el 27 de septiembre de 2026 a cualquier empresa que se dirija a consumidores, sea cual sea su tamaño. Estos son los cambios que más afectan a consultoras, agencias y empresas.</p>
+        <h2 id="titulo-por-que">Lo que ayer era un eslogan, hoy es una práctica desleal</h2>
+        <p class="entradilla-seccion">La Directiva (UE) 2024/825 se aplica desde el 27 de septiembre de 2026 a cualquier empresa que venda a consumidores, sea cual sea su tamaño. Esto es lo que cambia.</p>
       </div>
       <ol class="razones">
         <li>
-          <h3>Lista negra, sin análisis caso a caso</h3>
-          <p>Las nuevas prácticas se incorporan a la lista de prácticas desleales en cualquier circunstancia. Ya no hay que demostrar que una frase ha engañado a alguien: basta con haberla usado.</p>
+          <h3>Ya no hace falta demostrar el engaño</h3>
+          <p>Las nuevas prácticas entran en la lista negra de la normativa de competencia desleal. Basta con usar la frase: no hay que probar que alguien se la creyó.</p>
         </li>
         <li>
-          <h3>Las expresiones más habituales dejan de valer</h3>
-          <p>«Ecológico», «sostenible», «respetuoso con el medio ambiente» o «neutro en carbono» aparecen en webs, envases, catálogos y presentaciones comerciales. Sin un respaldo concreto, ya no son lícitas.</p>
+          <h3>Adiós a «eco», «verde» y «sostenible»</h3>
+          <p>Si no concretas el beneficio y no puedes demostrarlo, no puedes decirlo. Y estas palabras están en miles de webs, envases y catálogos.</p>
         </li>
         <li>
-          <h3>La compensación ya no sirve como argumento</h3>
-          <p>Comprar créditos de carbono no permite afirmar que un producto es neutro o que reduce emisiones. Solo pueden comunicarse las reducciones reales y medidas.</p>
+          <h3>Compensar no es reducir</h3>
+          <p>Comprar créditos de carbono ya no permite anunciar un producto «neutro en carbono». Solo cuentan las reducciones reales de emisiones.</p>
         </li>
         <li>
-          <h3>Cualquiera puede reclamar</h3>
-          <p>Competidores, asociaciones de consumidores y autoridades de consumo pueden impugnar una afirmación ambiental que no se pueda probar. La Ley de Competencia Desleal ya lo permitía antes de la transposición.</p>
+          <h3>Tu competencia puede reclamar</h3>
+          <p>Competidores, asociaciones de consumidores y autoridades de consumo pueden actuar contra una afirmación que no puedas probar. La Ley de Competencia Desleal ya lo permite hoy.</p>
         </li>
         <li>
-          <h3>Afecta a todos los canales</h3>
-          <p>La norma alcanza a la comunicación comercial en cualquier soporte: la web, la etiqueta, la publicidad, el material de venta y las redes sociales de la marca y de quienes hablan en su nombre.</p>
+          <h3>Cuenta todo lo que publicas</h3>
+          <p>La web, el envase, la publicidad, el material comercial y las redes sociales de la marca y de quien habla en su nombre.</p>
         </li>
         <li>
-          <h3>Callar tampoco protege</h3>
-          <p>Dejar de comunicar, el llamado greenhushing, deja sin argumentos a quien sí ha reducido su impacto. La salida es sustituir los adjetivos por datos que se puedan verificar.</p>
+          <h3>Callar no es la solución</h3>
+          <p>Dejar de comunicar, el llamado greenhushing, regala el terreno a quien exagera. La salida es cambiar adjetivos por datos.</p>
         </li>
       </ol>
-      <div>
-        <p class="cierre">La explicación completa, con una tabla de alternativas, está en el artículo <a href="https://redroom.es/directiva-2024-825-afirmaciones-ambientales/">Directiva 2024/825: las afirmaciones ambientales que ya no puedes usar en tu publicidad</a>.</p>
-      </div>
+      <p class="cierre">Todo el detalle, con una tabla de frases y alternativas, en el artículo <a href="https://redroom.es/directiva-2024-825-afirmaciones-ambientales/">Directiva 2024/825: las afirmaciones ambientales que ya no puedes usar en tu publicidad</a>.</p>
     </div>
   </section>
 
@@ -302,53 +300,53 @@
     <div class="contenedor">
       <div class="cabecera-seccion">
         <p class="meta">Para quién</p>
-        <h2 id="titulo-para-quien">Para quién es útil</h2>
+        <h2 id="titulo-para-quien">Para quien firma lo que se publica</h2>
       </div>
       <div class="perfiles">
         <article class="perfil">
           <h3>Agencias de marketing y comunicación</h3>
-          <p>Que trabajan para clientes de alimentación, moda, cosmética, energía, movilidad, construcción o turismo, sectores en los que las afirmaciones ambientales son habituales.</p>
+          <p>Antes de entregar una campaña a un cliente de alimentación, moda, cosmética, energía, movilidad, construcción o turismo.</p>
         </article>
         <article class="perfil">
           <h3>Departamentos de marketing y comunicación</h3>
           <p>Para revisar la web, las fichas de producto, los envases, las campañas y las notas de prensa antes de publicarlas.</p>
         </article>
         <article class="perfil">
-          <h3>Responsables de sostenibilidad y ESG</h3>
-          <p>Para comprobar que lo que la empresa comunica hacia fuera coincide con lo que puede demostrar con datos.</p>
+          <h3>Sostenibilidad y ESG</h3>
+          <p>Para que lo que la empresa cuenta fuera coincida con lo que puede demostrar.</p>
         </article>
         <article class="perfil">
-          <h3>Dirección de empresas de sectores con impacto</h3>
-          <p>Para conocer el riesgo de los mensajes de la marca y decidir qué hay que revisar primero.</p>
+          <h3>Dirección de empresas con impacto ambiental</h3>
+          <p>Para saber qué mensajes de la marca son un riesgo y cuáles hay que revisar primero.</p>
         </article>
         <article class="perfil">
-          <h3>Portavoces y directivos en redes</h3>
-          <p>Personas que publican en LinkedIn u otras redes como representantes de la marca. Lo que dicen sobre sus productos también puede considerarse comunicación de la empresa.</p>
+          <h3>Portavoces y directivos en LinkedIn</h3>
+          <p>Lo que publicas como cara visible de la marca también puede contar como comunicación de la empresa.</p>
         </article>
         <article class="perfil">
           <h3>Prensa, consultoría y formación</h3>
-          <p>Periodistas que analizan anuncios y declaraciones de empresas, consultoras que asesoran a sus clientes y docentes que explican la norma con ejemplos reales.</p>
+          <p>Para analizar anuncios, asesorar a clientes o explicar la norma con ejemplos reales.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section aria-labelledby="titulo-que-revisa">
+  <section aria-labelledby="titulo-que-detecta">
     <div class="contenedor">
       <div class="cabecera-seccion">
-        <p class="meta">Qué revisa</p>
-        <h2 id="titulo-que-revisa">Seis tipos de afirmación</h2>
+        <p class="meta">Qué detecta</p>
+        <h2 id="titulo-que-detecta">Seis tipos de greenwashing que la directiva prohíbe o limita</h2>
       </div>
       <div class="desplazable">
         <table class="tabla-categorias">
           <thead><tr><th scope="col">Tipo</th><th scope="col">Ejemplos</th><th scope="col">Base legal</th></tr></thead>
           <tbody>
-            <tr><td>Afirmaciones genéricas</td><td>«Ecológico», «verde» o «sostenible» sin explicar en qué consiste el beneficio.</td><td>Directiva 2005/29/CE, anexo I, punto 4 bis</td></tr>
-            <tr><td>Neutralidad por compensación</td><td>«Neutro en carbono» o «positivo para el clima» basados en créditos de carbono.</td><td>Anexo I, punto 4 quater</td></tr>
-            <tr><td>Beneficio parcial como total</td><td>Atribuir a toda la marca o a todo el producto lo que afecta a una parte.</td><td>Anexo I, punto 4 ter</td></tr>
-            <tr><td>Compromisos de futuro</td><td>«Cero emisiones en 2040» sin un plan detallado y verificado por un experto independiente.</td><td>Artículo 6, apartado 2, letra d)</td></tr>
-            <tr><td>Sellos propios</td><td>Etiquetas de sostenibilidad que no proceden de una certificación ni de una autoridad pública.</td><td>Anexo I, punto 2 bis</td></tr>
-            <tr><td>Requisitos legales como ventaja</td><td>Presentar como mérito propio lo que la ley exige a todos, como «sin CFC».</td><td>Anexo I, punto 10 bis</td></tr>
+            <tr><td>Afirmaciones genéricas</td><td>«Ecológico», «verde» o «sostenible» sin decir en qué consiste el beneficio.</td><td>Directiva 2005/29/CE, anexo I, punto 4 bis</td></tr>
+            <tr><td>Neutralidad por compensación</td><td>«Neutro en carbono» o «positivo para el clima» gracias a créditos de carbono.</td><td>Anexo I, punto 4 quater</td></tr>
+            <tr><td>La parte por el todo</td><td>Presentar como sostenible toda la marca o todo el producto cuando el beneficio afecta solo a una parte.</td><td>Anexo I, punto 4 ter</td></tr>
+            <tr><td>Promesas de futuro</td><td>«Cero emisiones en 2040» sin un plan detallado y verificado por un experto independiente.</td><td>Artículo 6, apartado 2, letra d)</td></tr>
+            <tr><td>Sellos propios</td><td>Etiquetas de sostenibilidad que no vienen de una certificación ni de una autoridad pública.</td><td>Anexo I, punto 2 bis</td></tr>
+            <tr><td>Presumir de lo obligatorio</td><td>Vender como mérito propio lo que la ley exige a todos, como «sin CFC».</td><td>Anexo I, punto 10 bis</td></tr>
           </tbody>
         </table>
       </div>
@@ -360,26 +358,24 @@
     <div class="contenedor">
       <div class="cabecera-seccion">
         <p class="meta">Créditos</p>
-        <h2 id="titulo-creditos">Créditos y licencia</h2>
+        <h2 id="titulo-creditos">Abierto, con una condición</h2>
       </div>
-      <div>
-        <div class="cuerpo">
-          <p>Es un proyecto abierto. Puedes usar el comprobador, copiar los datos, adaptarlos e integrarlos en tus propias herramientas, también con fines comerciales, y proponer mejoras en GitHub.</p>
-          <div class="obligatorio">
-            <p class="meta">Mención obligatoria</p>
-            <p>En cualquier uso, copia o adaptación hay que citar a Red Room® como autor, con un enlace a <a href="https://redroom.es/">redroom.es</a>. Por ejemplo:</p>
-            <blockquote>Fuente: «Comprobador de reclamos ambientales», de Red Room® (https://redroom.es). Licencia CC BY 4.0.</blockquote>
-          </div>
-          <dl class="licencias">
-            <dt>Datos y textos</dt>
-            <dd><a href="https://creativecommons.org/licenses/by/4.0/deed.es">Creative Commons Atribución 4.0 (CC BY 4.0)</a>.</dd>
-            <dt>Código</dt>
-            <dd>Licencia MIT. El aviso de autoría, que incluye a Red Room® y redroom.es, debe conservarse en todas las copias.</dd>
-            <dt>Ilustraciones y marca</dt>
-            <dd>El logotipo y los grabados son de Red Room® y no forman parte de las licencias abiertas.</dd>
-          </dl>
-          <p class="aviso-legal">Lista orientativa basada en la Directiva (UE) 2024/825. Puede dar falsos positivos y no detecta todos los casos. No sustituye al asesoramiento jurídico.</p>
+      <div class="cuerpo">
+        <p>Úsalo, cópialo, adáptalo o intégralo en tus herramientas, también con fines comerciales. Si lo mejoras, propón los cambios en GitHub.</p>
+        <div class="obligatorio">
+          <p class="meta">La condición</p>
+          <p>Cita a Red Room® como autor, con un enlace a <a href="https://redroom.es/">redroom.es</a>, en cualquier uso, copia o adaptación. Así:</p>
+          <blockquote>Fuente: «Detector de greenwashing», de Red Room® (https://redroom.es). Licencia CC BY 4.0.</blockquote>
         </div>
+        <dl class="licencias">
+          <dt>Datos y textos</dt>
+          <dd><a href="https://creativecommons.org/licenses/by/4.0/deed.es">Creative Commons Atribución 4.0 (CC BY 4.0)</a>.</dd>
+          <dt>Código</dt>
+          <dd>Licencia MIT. El aviso de autoría, que incluye a Red Room® y redroom.es, debe conservarse en todas las copias.</dd>
+          <dt>Ilustraciones y marca</dt>
+          <dd>El logotipo y los grabados son de Red Room® y no forman parte de las licencias abiertas.</dd>
+        </dl>
+        <p class="aviso-legal">Es una herramienta orientativa: detecta expresiones, no interpreta el contexto y puede equivocarse en los dos sentidos. No sustituye al asesoramiento jurídico.</p>
       </div>
     </div>
   </section>
@@ -391,7 +387,7 @@
       <a href="https://redroom.es/"><img src="assets/img/redroom-logo-negativo.png" width="560" height="113" alt="Red Room®, ir a redroom.es"></a>
     </div>
     <div>
-      <p>Red Room® es una agencia de marketing ético. Si necesitas revisar la web, los envases o las campañas de tu empresa, lo hacemos en nuestro servicio de <a href="https://redroom.es/agencia-de-comunicacion-esg-sostenibilidad/">comunicación ESG y sostenibilidad</a>.</p>
+      <p>Red Room® es una agencia de marketing ético. Si quieres que revisemos la web, los envases o las campañas de tu empresa, lo hacemos en nuestro servicio de <a href="https://redroom.es/agencia-de-comunicacion-esg-sostenibilidad/">comunicación ESG y sostenibilidad</a>.</p>
       <ul>
         <li><a href="https://redroom.es/directiva-2024-825-afirmaciones-ambientales/">Artículo sobre la Directiva 2024/825</a></li>
         <li><a href="https://redroom.es/manifiesto-marketing-etico/">Manifiesto por un marketing ético</a></li>
@@ -424,7 +420,7 @@
   function veredicto(r) {
     estadoEl.textContent = '';
     if (!r) {
-      estadoEl.appendChild(el('p', 'espera', 'El resultado aparece aquí mientras escribes.'));
+      estadoEl.appendChild(el('p', 'espera', 'Aquí verás el resultado mientras escribes.'));
       return;
     }
     var limpio = r.total === 0;
@@ -437,13 +433,13 @@
       : 'Grabado de un hombre con los ojos muy abiertos y un tornillo clavado en la cabeza';
     caja.appendChild(img);
     var t = el('div');
-    t.appendChild(el('p', 'meta', limpio ? 'Sin avisos' : (r.total === 1 ? '1 aviso' : r.total + ' avisos')));
-    t.appendChild(el('h2', null, limpio ? 'No hemos encontrado expresiones de riesgo' : 'Hay expresiones que conviene revisar'));
+    t.appendChild(el('p', 'meta', limpio ? 'Sin frases de riesgo' : (r.total === 1 ? '1 frase a revisar' : r.total + ' frases a revisar')));
+    t.appendChild(el('h2', null, limpio ? 'No hemos detectado greenwashing' : 'Esto puede ser greenwashing'));
     if (limpio) {
-      t.appendChild(el('p', null, 'Revisa igualmente que cada dato ambiental se pueda demostrar con documentación.'));
+      t.appendChild(el('p', null, 'Asegúrate de que puedes demostrar cada dato con documentos.'));
     } else {
       var p = el('p', null, r.alto + ' de riesgo alto y ' + r.medio + ' de riesgo medio. ');
-      var a = el('a', null, 'Ver el detalle');
+      var a = el('a', null, 'Ver qué cambiar');
       a.href = '#detalle';
       p.appendChild(a);
       t.appendChild(p);
@@ -500,8 +496,8 @@
       detalleEl.hidden = true;
       return;
     }
-    var avisos = ComprobadorReclamos.comprobar(texto, datos);
-    veredicto(ComprobadorReclamos.resumen(avisos));
+    var avisos = DetectorGreenwashing.comprobar(texto, datos);
+    veredicto(DetectorGreenwashing.resumen(avisos));
     pintarMarcado(texto, avisos);
     pintarAvisos(avisos);
     detalleEl.hidden = avisos.length === 0;
@@ -521,7 +517,7 @@
     campo.focus();
   });
 
-  fetch('datos/reclamos.json')
+  fetch('datos/afirmaciones.json')
     .then(function (r) { return r.json(); })
     .then(function (d) { datos = d; revisar(); })
     .catch(function () { estadoEl.textContent = 'No se han podido cargar los datos. Recarga la página.'; });

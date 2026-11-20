@@ -11,7 +11,7 @@ Puedes copiarlos, redistribuirlos, adaptarlos y usarlos con cualquier fin, tambi
 
 En cualquier uso, copia o adaptación hay que citar a Red Room® como autor, con un enlace a <https://redroom.es>, indicar la licencia y señalar si se han hecho cambios. Forma de cita:
 
-> Fuente: «Comprobador de reclamos ambientales», de Red Room® (https://redroom.es). Licencia CC BY 4.0.
+> Fuente: «Detector de greenwashing», de Red Room® (https://redroom.es). Licencia CC BY 4.0.
 
 Si el soporte no admite enlaces, por ejemplo en un documento impreso, escribe la dirección completa: redroom.es.
 

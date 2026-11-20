@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Si usas estos datos o este código, cítalos así."
-title: "Comprobador de reclamos ambientales (Directiva 2024/825)"
+title: "Detector de greenwashing (Directiva 2024/825)"
 type: software
 authors:
   - name: "Red Room®"
@@ -13,6 +13,7 @@ date-released: 2026-11-20
 keywords:
   - greenwashing
   - Directiva 2024/825
-  - reclamos ambientales
+  - afirmaciones ambientales
+  - alegaciones ambientales
   - marketing ético
   - sostenibilidad

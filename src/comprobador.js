@@ -1,13 +1,13 @@
 /*
- * Comprobador de reclamos ambientales (Directiva (UE) 2024/825)
+ * Detector de greenwashing (Directiva (UE) 2024/825)
  * Red Room® · https://redroom.es · Código con licencia MIT
  *
- * Funciona en Node.js (CommonJS) y en el navegador (window.ComprobadorReclamos).
+ * Funciona en Node.js (CommonJS) y en el navegador (window.DetectorGreenwashing).
  * No tiene dependencias.
  */
 (function (raiz, fabrica) {
   if (typeof module === 'object' && module.exports) module.exports = fabrica();
-  else raiz.ComprobadorReclamos = fabrica();
+  else raiz.DetectorGreenwashing = fabrica();
 })(typeof self !== 'undefined' ? self : this, function () {
   'use strict';
 
@@ -37,9 +37,9 @@
     return { texto: salida, posiciones };
   }
 
-  /** Prepara las expresiones regulares de cada reclamo. */
+  /** Prepara las expresiones regulares de cada afirmación. */
   function compilar(datos) {
-    return datos.reclamos.map((r) => ({
+    return datos.afirmaciones.map((r) => ({
       ...r,
       categoriaNombre: datos.categorias[r.categoria].nombre,
       base: datos.categorias[r.categoria].base,
@@ -49,9 +49,9 @@
   }
 
   /**
-   * Busca reclamos en un texto.
+   * Busca afirmaciones ambientales de riesgo en un texto.
    * @param {string} texto Texto que se quiere revisar.
-   * @param {object} datos Contenido de datos/reclamos.json.
+   * @param {object} datos Contenido de datos/afirmaciones.json.
    * @returns {Array<object>} Avisos ordenados por posición.
    */
   function comprobar(texto, datos) {

@@ -12,7 +12,7 @@
 const fs = require('fs');
 const path = require('path');
 const { comprobar, resumen } = require('../src/comprobador.js');
-const datos = require('../datos/reclamos.json');
+const datos = require('../datos/afirmaciones.json');
 
 const args = process.argv.slice(2);
 const json = args.includes('--json');
@@ -46,8 +46,8 @@ function salir(avisos) {
       console.log(`    Alternativa: ${a.alternativa}\n`);
     }
     const r = resumen(avisos);
-    console.log(`${r.total} ${r.total === 1 ? 'aviso' : 'avisos'}: ${r.alto} de riesgo alto y ${r.medio} de riesgo medio.`);
-    console.log('Lista orientativa basada en la Directiva (UE) 2024/825. No sustituye al asesoramiento jurídico.');
+    console.log(`${r.total} ${r.total === 1 ? 'frase a revisar' : 'frases a revisar'}: ${r.alto} de riesgo alto y ${r.medio} de riesgo medio.`);
+    console.log('Detector de greenwashing de Red Room® (redroom.es). Herramienta orientativa: no sustituye al asesoramiento jurídico.');
   }
   const r = resumen(avisos);
   process.exitCode = r.alto > 0 || (estricto && r.medio > 0) ? 1 : 0;
