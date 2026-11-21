@@ -11,7 +11,7 @@
   },
   "keywords": ["greenwashing", "directiva 2024/825", "green claims", "marketing ético", "sostenibilidad", "afirmaciones ambientales", "alegaciones ambientales", "blanqueo ecológico", "ecodiseño", "español"],
   "author": "Red Room® (https://redroom.es)",
-  "homepage": "https://red-room-marketing.github.io/detector-greenwashing/",
+  "homepage": "https://redroom.es/detector-greenwashing/",
   "repository": { "type": "git", "url": "https://github.com/red-room-marketing/detector-greenwashing.git" },
   "license": "MIT",
   "engines": { "node": ">=18" }
