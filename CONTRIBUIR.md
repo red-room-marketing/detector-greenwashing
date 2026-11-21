@@ -1,6 +1,8 @@
 # Cómo contribuir
 
-Gracias por ayudar a mejorar el detector.
+Gracias por ayudar a mejorar el detector. Es un proyecto abierto, iniciado por Red Room®, que queremos que sea una herramienta de todos: agencias, consultoras y departamentos de sostenibilidad, ESG y comunicación.
+
+Si tu organización colabora de forma continuada, indícalo en tu propuesta y la añadiremos a la lista de participantes.
 
 ## Proponer una frase nueva o una corrección
 

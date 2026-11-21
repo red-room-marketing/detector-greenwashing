@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://redroom.es/"><img src="assets/img/redroom-logo.png" alt="Red Room®" width="280"></a>
+  <img src="assets/img/detector-icono.svg" alt="" width="96">
 </p>
 
-# Detector de greenwashing
+<h1 align="center">Detector de greenwashing</h1>
 
-**Directiva (UE) 2024/825 · Herramienta gratuita y abierta de [Red Room®](https://redroom.es/)**
+<p align="center"><strong>Directiva (UE) 2024/825 · Herramienta gratuita y abierta</strong></p>
 
 Desde el 27 de septiembre de 2026, llamar «ecológico», «sostenible» o «neutro en carbono» a un producto sin poder demostrarlo es una práctica desleal. Pega tu texto y el detector te dice qué frases sobran, por qué y cómo decirlo con datos.
 
@@ -20,7 +20,8 @@ Tu texto no sale de tu navegador: no se guarda ni se envía a ningún servidor.
 - [Cómo se usa](#cómo-se-usa)
 - [Limitaciones](#limitaciones)
 - [Créditos y licencia](#créditos-y-licencia)
-- [Contribuir](#contribuir)
+- [Una herramienta de todos](#una-herramienta-de-todos)
+- [Una iniciativa de Red Room®](#una-iniciativa-de-red-room)
 
 ## Por qué ahora
 
@@ -131,16 +132,35 @@ Abierto, con una condición. Úsalo, cópialo, adáptalo o intégralo en tus her
 |---|---|
 | Datos (`datos/`) y textos explicativos | [CC BY 4.0](LICENCIA-DATOS.md) |
 | Código (`src/`, `bin/`, `scripts/`, `test/`, `index.html`) | [MIT](LICENSE). El aviso de autoría, que incluye a Red Room® y redroom.es, debe conservarse en todas las copias. |
-| Logotipo e ilustraciones (`assets/img/`) | Propiedad de Red Room®. No forman parte de las licencias abiertas. |
+| Icono del detector (`assets/img/detector-icono.svg`) | [CC BY 4.0](LICENCIA-DATOS.md), como los datos. |
+| Logotipo de Red Room® y grabados (resto de `assets/img/`) | Propiedad de Red Room®. No forman parte de las licencias abiertas. |
 | Fuentes (`assets/fuentes/`) | Roboto Condensed y Lora, con licencia [SIL Open Font License 1.1](assets/fuentes/). |
 
 ¿Lo usas en un artículo, una formación o un proyecto? Cuéntanoslo desde [redroom.es](https://redroom.es/contacto/).
 
-## Contribuir
+## Una herramienta de todos
 
-¿Echas en falta una frase o has encontrado un falso positivo? Consulta [CONTRIBUIR.md](CONTRIBUIR.md).
+Invitamos a agencias, consultoras y departamentos de sostenibilidad, ESG y comunicación a sumarse al proyecto. Cuantas más miradas, mejor detecta. Puedes:
+
+- Proponer expresiones que se usan en tu sector y que todavía no detecta.
+- Avisar de falsos positivos, con ejemplos reales.
+- Revisar los motivos y las alternativas con criterio legal o técnico.
+- Llevarlo a otras lenguas: catalán, euskera, gallego o portugués.
+- Integrarlo en vuestras herramientas y procesos de revisión.
+
+[Propón una mejora](https://github.com/red-room-marketing/detector-greenwashing/issues/new) o consulta [CONTRIBUIR.md](CONTRIBUIR.md). Las organizaciones que colaboren aparecerán en este README y en la web como participantes.
 
 ```bash
 npm test      # pruebas y comprobación de que el CSV está al día
 npm run csv   # regenera datos/afirmaciones.csv a partir del JSON
 ```
+
+## Una iniciativa de Red Room®
+
+<p>
+  <a href="https://redroom.es/"><img src="assets/img/redroom-logo.png" alt="Red Room®" width="200"></a>
+</p>
+
+Hemos creado el Detector de greenwashing en [Red Room®](https://redroom.es/), agencia de marketing ético, porque la directiva afecta a todo el sector y nadie debería afrontarla en solitario. Lo publicamos abierto para que crezca con quienes trabajan cada día en comunicación y sostenibilidad.
+
+¿Quieres hablar del proyecto o revisar la comunicación de tu empresa? [Escríbenos](https://redroom.es/contacto/).

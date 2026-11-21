@@ -6,7 +6,7 @@
 <title>Detector de greenwashing · Directiva 2024/825 · Red Room®</title>
 <meta name="description" content="Pega tu texto y descubre qué afirmaciones ambientales incumplen la Directiva (UE) 2024/825: «ecológico», «sostenible», «neutro en carbono»… Gratis, en español y sin enviar tu texto a ningún servidor.">
 <link rel="canonical" href="https://red-room-marketing.github.io/detector-greenwashing/">
-<link rel="icon" href="assets/img/redroom-favicon.png">
+<link rel="icon" href="assets/img/detector-icono.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fuentes/roboto-condensed-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fuentes/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
 <meta property="og:type" content="website">
@@ -79,7 +79,10 @@
   /* Cabecera */
   .barra { background: var(--rr-cream); border-bottom: 1px solid var(--borde); }
   .barra .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 60px; }
-  .logo img { width: 150px; }
+  .logo { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--rr-ink); }
+  .logo img { width: 40px; height: 40px; }
+  .logo span { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: 1.0625rem; line-height: 0.95; }
+  .logo:hover { color: var(--rr-ink); }
   nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; margin: 0; padding: 0; }
   nav a { font-family: var(--display); font-weight: 700; text-transform: uppercase; text-decoration: none; font-size: 0.875rem; }
   nav a:hover { text-decoration: underline; }
@@ -187,13 +190,23 @@
   @media (max-width: 600px) { dl.licencias { grid-template-columns: minmax(0, 1fr); } dl.licencias dd { margin-bottom: 0.5rem; } }
   .aviso-legal { font-size: 0.875rem; }
 
-  /* Pie */
-  footer { padding: 2.5rem 0; font-size: 0.9375rem; }
-  footer .contenedor { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem; align-items: start; }
-  footer img { width: 170px; }
-  footer p { margin: 0 0 0.75rem; }
-  footer ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
-  @media (max-width: 700px) { footer .contenedor { grid-template-columns: minmax(0, 1fr); } }
+  /* Iniciativa y pie */
+  .iniciativa { padding: clamp(3rem, 6vw, 4.5rem) 0 2rem; }
+  .iniciativa .contenedor > .rejilla-iniciativa { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .autoria .meta { color: var(--rr-red-on-dark); margin-bottom: 0.75rem; }
+  .autoria img { width: 200px; margin-bottom: 1.25rem; }
+  .autoria p { margin: 0 0 1rem; font-size: 1rem; }
+  .llamada h2 { margin-bottom: 0.75rem; }
+  .llamada > p { margin: 0 0 1rem; }
+  .llamada ul { margin: 0 0 1.25rem; padding-left: 1.1rem; display: grid; gap: 0.35rem; }
+  .llamada .acciones { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
+  .boton.claro { background: var(--rr-cream); color: var(--rr-ink); border-color: var(--rr-cream); }
+  .boton.contorno { color: var(--rr-cream); border-color: var(--rr-cream); }
+  .boton.claro:hover, .boton.contorno:hover { background: var(--rr-red); border-color: var(--rr-red); color: var(--rr-white); }
+  .participantes { margin: 1.25rem 0 0; font-size: 0.9375rem; opacity: 0.85; }
+  .pie-final { border-top: 1px solid rgba(251, 248, 227, 0.25); margin-top: 3rem; padding-top: 1.25rem; font-size: 0.875rem; }
+  .pie-final ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+  @media (max-width: 760px) { .iniciativa .contenedor > .rejilla-iniciativa { grid-template-columns: minmax(0, 1fr); } }
 </style>
 </head>
 <body>
@@ -201,13 +214,13 @@
 
 <header class="barra">
   <div class="contenedor">
-    <a class="logo" href="https://redroom.es/"><img src="assets/img/redroom-logo.png" width="560" height="113" alt="Red Room®, ir a redroom.es"></a>
+    <a class="logo" href="./"><img src="assets/img/detector-icono.svg" width="40" height="40" alt=""><span>Detector de<br>greenwashing</span></a>
     <nav aria-label="Secciones">
       <ul>
         <li><a href="#detector">Detector</a></li>
         <li class="opcional"><a href="#por-que">Por qué ahora</a></li>
         <li class="opcional"><a href="#para-quien">Para quién</a></li>
-        <li class="opcional"><a href="#creditos">Créditos</a></li>
+        <li class="opcional"><a href="#colabora">Colabora</a></li>
         <li><a href="https://github.com/red-room-marketing/detector-greenwashing">GitHub</a></li>
       </ul>
     </nav>
@@ -373,7 +386,7 @@
           <dt>Código</dt>
           <dd>Licencia MIT. El aviso de autoría, que incluye a Red Room® y redroom.es, debe conservarse en todas las copias.</dd>
           <dt>Ilustraciones y marca</dt>
-          <dd>El logotipo y los grabados son de Red Room® y no forman parte de las licencias abiertas.</dd>
+          <dd>El icono del detector se publica con licencia CC BY 4.0. El logotipo de Red Room® y los grabados son de Red Room® y no forman parte de las licencias abiertas.</dd>
         </dl>
         <p class="aviso-legal">Es una herramienta orientativa: detecta expresiones, no interpreta el contexto y puede equivocarse en los dos sentidos. No sustituye al asesoramiento jurídico.</p>
       </div>
@@ -381,16 +394,37 @@
   </section>
 </main>
 
-<footer class="negro">
+<footer class="negro iniciativa" id="colabora" aria-labelledby="titulo-colabora">
   <div class="contenedor">
-    <div>
-      <a href="https://redroom.es/"><img src="assets/img/redroom-logo-negativo.png" width="560" height="113" alt="Red Room®, ir a redroom.es"></a>
+    <div class="rejilla-iniciativa">
+      <div class="autoria">
+        <p class="meta">Una iniciativa de</p>
+        <a href="https://redroom.es/"><img src="assets/img/redroom-logo-negativo.png" width="560" height="113" alt="Red Room®, ir a redroom.es"></a>
+        <p>Hemos creado el Detector de greenwashing en Red Room®, agencia de marketing ético, porque la directiva afecta a todo el sector y nadie debería afrontarla en solitario.</p>
+        <p>Lo publicamos abierto para que crezca con quienes trabajan cada día en comunicación y sostenibilidad.</p>
+      </div>
+      <div class="llamada">
+        <h2 id="titulo-colabora">Una herramienta de todos</h2>
+        <p>Invitamos a agencias, consultoras y departamentos de sostenibilidad, ESG y comunicación a sumarse al proyecto. Cuantas más miradas, mejor detecta. Puedes:</p>
+        <ul>
+          <li>Proponer expresiones que se usan en tu sector y que todavía no detecta.</li>
+          <li>Avisar de falsos positivos, con ejemplos reales.</li>
+          <li>Revisar los motivos y las alternativas con criterio legal o técnico.</li>
+          <li>Llevarlo a otras lenguas: catalán, euskera, gallego o portugués.</li>
+          <li>Integrarlo en vuestras herramientas y procesos de revisión.</li>
+        </ul>
+        <div class="acciones">
+          <a class="boton claro" href="https://github.com/red-room-marketing/detector-greenwashing/issues/new">Proponer una mejora</a>
+          <a class="boton contorno" href="https://redroom.es/contacto/">Escribir a Red Room®</a>
+        </div>
+        <p class="participantes">Las organizaciones que colaboren aparecerán aquí y en el repositorio como participantes.</p>
+      </div>
     </div>
-    <div>
-      <p>Red Room® es una agencia de marketing ético. Si quieres que revisemos la web, los envases o las campañas de tu empresa, lo hacemos en nuestro servicio de <a href="https://redroom.es/agencia-de-comunicacion-esg-sostenibilidad/">comunicación ESG y sostenibilidad</a>.</p>
+    <div class="pie-final">
       <ul>
+        <li><a href="#creditos">Créditos y licencia</a></li>
         <li><a href="https://redroom.es/directiva-2024-825-afirmaciones-ambientales/">Artículo sobre la Directiva 2024/825</a></li>
-        <li><a href="https://redroom.es/manifiesto-marketing-etico/">Manifiesto por un marketing ético</a></li>
+        <li><a href="https://redroom.es/agencia-de-comunicacion-esg-sostenibilidad/">Comunicación ESG y sostenibilidad</a></li>
         <li><a href="https://github.com/red-room-marketing/detector-greenwashing">Código y datos en GitHub</a></li>
       </ul>
     </div>

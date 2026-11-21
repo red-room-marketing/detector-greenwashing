@@ -18,5 +18,6 @@ Si el soporte no admite enlaces, por ejemplo en un documento impreso, escribe la
 ## Otras partes del proyecto
 
 - **Código** (`src/`, `bin/`, `scripts/`, `test/` e `index.html`): licencia MIT. Consulta [LICENSE](LICENSE). El aviso de autoría debe conservarse en todas las copias.
-- **Logotipo e ilustraciones** (`assets/img/`): propiedad de Red Room®. No forman parte de las licencias abiertas y no pueden reutilizarse sin permiso.
+- **Icono del detector** (`assets/img/detector-icono.svg`): CC BY 4.0, igual que los datos.
+- **Logotipo de Red Room® y grabados** (resto de `assets/img/`): propiedad de Red Room®. No forman parte de las licencias abiertas y no pueden reutilizarse sin permiso.
 - **Fuentes** (`assets/fuentes/`): Roboto Condensed y Lora, con licencia SIL Open Font License 1.1.
